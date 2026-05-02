@@ -2,6 +2,17 @@
 
 
 
+## v0.3.0 (2026-05-02)
+
+### Feature
+
+* feat: Add loader module ([`d473fe8`](https://github.com/DawidDykas/DataExplorer/commit/d473fe8208ce3cf294bd0ed966a182bd56b2af02))
+
+### Unknown
+
+* 0Merge branch &#39;main&#39; of https://github.com/DawidDykas/DataExplorer ([`18bc936`](https://github.com/DawidDykas/DataExplorer/commit/18bc9368355a306970f493bb8f77d88c39d6a540))
+
+
 ## v0.2.0 (2026-05-02)
 
 ### Feature
