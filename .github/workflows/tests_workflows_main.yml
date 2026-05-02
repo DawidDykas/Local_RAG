@@ -1,0 +1,67 @@
+
+name: Build workflow
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+  
+permissions:
+  contents: write
+  
+jobs:
+  build-test-lint-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # 2. Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # 3. Install build tools
+      - name: Install build tools
+        run: |
+          python -m pip install --upgrade pip
+          pip install build hatchling
+          pip install black
+
+      # 4. Install project dependencies including dev
+      - name: Install dependencies
+        run: |
+          pip install uv
+          uv sync
+
+ #     - name: Run Black
+ #       run: |
+ #         black .
+
+
+#      - name: Commit and push Black changes
+#        run: |
+#         git config user.name "github-actions"
+#         git config user.email "github-actions@github.com"
+#          git add .
+#          git commit -m "fix: Format code with Black" || echo "fix: No #changes to commit"
+#          git push
+
+      - name: Python Semantic Release
+        id: release
+        uses: python-semantic-release/python-semantic-release@v9.8.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish to GitHub Releases
+        if: steps.release.outputs.released == 'true'
+        uses: python-semantic-release/upload-to-gh-release@main
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
