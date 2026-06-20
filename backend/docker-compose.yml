@@ -48,7 +48,7 @@ services:
 
   worker:
     build:
-      context: ./ensemble_database_pipline
+      context: ./document_processing_pipeline
     command: celery -A celeryModule.tasksCelery worker -l info
     depends_on:
       - redis
@@ -63,13 +63,13 @@ services:
   fastapi:
     container_name: fastapi
     build:
-      context: ./ensemble_database_pipline
+      context: ./document_processing_pipeline
     ports:
       - "5000:5000"
     depends_on:
       - minio
     volumes:
-      - ./ensemble_database_pipline:/app
+      - ./document_processing_pipeline:/app
     networks:
       - appnet
     restart: unless-stopped
