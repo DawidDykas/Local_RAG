@@ -9,3 +9,4 @@ llama-index-embeddings-ollama
 llama-index-core
 pymupdf
 python-docx
+qdrant_client

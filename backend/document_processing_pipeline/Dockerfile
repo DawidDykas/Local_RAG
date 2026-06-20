@@ -4,8 +4,6 @@ WORKDIR /app
 
 COPY . .
 
-# req in uv for fastapi and uvicorn
-
 
 EXPOSE 5000
 RUN pip install -r requirements.txt

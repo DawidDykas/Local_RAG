@@ -3,8 +3,6 @@ from log_config.logger_config import logger
 from celeryModule.tasksCelery import webhook_minio_events
 
 router = APIRouter()
-logger.info("🚀 MinIO Events Router Initialized")
-
 
 @router.post("/minio-event")
 async def handle_minio_event(req: Request):

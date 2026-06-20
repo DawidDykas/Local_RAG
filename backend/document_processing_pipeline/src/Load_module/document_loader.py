@@ -9,6 +9,8 @@ from llama_index.embeddings.ollama import OllamaEmbedding
 from llama_index.core import Document
 from log_config.logger_config import logger
 
+from qdrantBase.clientQdrant import qdrant_manager
+from datetime import datetime
 
 
 # embedding model
@@ -18,7 +20,7 @@ embed_model = OllamaEmbedding(
 )
 
 # chunking (jawny żeby mieć kontrolę)
-splitter = SentenceSplitter(chunk_size=300, chunk_overlap=50)
+splitter = SentenceSplitter(chunk_size=500, chunk_overlap=50)
 
 
 
@@ -70,16 +72,58 @@ def chunk_text(text: str, max_size: int = 500) -> List[str]:
 
     return chunks
 
+
+
+
 # =========================
 # MAIN PIPELINE
 # =========================
 # 
-def process_file(bucket: str, key: str, s3 = s3) -> List[Dict[str, any]]:
+# def process_file(bucket: str, key: str, s3 = s3) -> List[Dict[str, any]]:
+#     # 1. pobierz z MinIO
+#     logger.info(f"Processing file from bucket: {bucket}, key: {key}")
+
+#     key = unquote_plus(key)
+
+#     obj = s3.get_object(Bucket=bucket, Key=key)
+#     data = obj["Body"].read()
+
+#     # 2. wykryj typ
+#     ext = key.split(".")[-1].lower()
+
+#     # 3. wybierz loader
+#     loader = get_loader(ext)
+
+#     # 4. parsuj do tekstu
+#     text = loader.load(data)
+
+#     # 5. chunking
+#     # chunks = chunk_text(text)
+
+
+#     doc = Document(text=text)
+
+#     nodes = splitter.get_nodes_from_documents([doc])
+#     logger.info(len(nodes))
+
+
+
+#     texts = [node.text for node in nodes]
+#     embeddings = embed_model.get_text_embedding_batch(texts)
+
+#     results = []
+#     for node, emb in zip(nodes, embeddings):
+#         results.append({
+#             "text": node.text,
+#             "metadata": node.metadata,
+#             "embedding": emb
+#         })
+
+
+def process_file(bucket: str, key: str, s3 = s3) -> Dict:
     # 1. pobierz z MinIO
     logger.info(f"Processing file from bucket: {bucket}, key: {key}")
-
     key = unquote_plus(key)
-
     obj = s3.get_object(Bucket=bucket, Key=key)
     data = obj["Body"].read()
 
@@ -93,32 +137,26 @@ def process_file(bucket: str, key: str, s3 = s3) -> List[Dict[str, any]]:
     text = loader.load(data)
 
     # 5. chunking
-    # chunks = chunk_text(text)
-
-
     doc = Document(text=text)
-
     nodes = splitter.get_nodes_from_documents([doc])
+    logger.info(f"📄 Liczba chunków: {len(nodes)}")
 
-    # embeddingi + metadata
-    results = []
+    # 6. generuj embeddingi
+    texts = [node.text for node in nodes]
+    embeddings = embed_model.get_text_embedding_batch(texts)
 
-    for node in nodes:
-        embedding = embed_model.get_text_embedding(node.text)
+    result = qdrant_manager.save_embeddings(
+        nodes=nodes,
+        embeddings=embeddings,
+        file_name=key,
+        bucket=bucket,
+        metadata={
+            "file_extension": ext,
+            "processed_at": str(datetime.now())
+        }
+    )
+    
+    logger.info(f"✅ Zapisano do Qdrant: {result}")
+    
+    return result
 
-        results.append({
-            "text": node.text,
-            "metadata": node.metadata,
-            "embedding": embedding
-        })
-
-    print(len(results))
-    print(results[0])
-    return results
-    # return {
-    #     "file": key,
-    #     "chunks": chunks,
-    #     "chunk_count": len(chunks),
-    #     "key": key,
-    #     "bucket": bucket
-    # }
