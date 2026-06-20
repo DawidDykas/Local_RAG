@@ -2,6 +2,13 @@
 
 
 
+## v0.3.1 (2026-05-02)
+
+### Fix
+
+* fix: delete file ([`eafa848`](https://github.com/DawidDykas/DataExplorer/commit/eafa84850ad7f40cf303f56e55e30df2f7c494cc))
+
+
 ## v0.3.0 (2026-05-02)
 
 ### Feature
