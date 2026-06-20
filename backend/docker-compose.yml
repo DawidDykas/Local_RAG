@@ -1,19 +1,77 @@
+version: "3.8"
+
 services:
-  minio:
-    image: minio/minio
-    container_name: minio
 
+  redis:
+    image: redis:7
     ports:
-      - "${MINIO_SERVER_AD}:${MINIO_SERVER_AD}"
-      - "${MINIO_SERVER_HTTP_HOST}:${MINIO_SERVER_HTTP_HOST}"
+      - "6379:6379"
+    networks:
+      - appnet
 
-    environment:
-      MINIO_ROOT_USER: ${USER_NAME_ACCES}
-      MINIO_ROOT_PASSWORD: ${USER_PASSWORD_ACCES}
+  worker:
+    build:
+      context: ./ensemble_database_pipline
+    command: celery -A celeryModule.tasksCelery worker -l info
+    depends_on:
+      - redis
+    networks:
+      - appnet
 
+  fastapi:
+    container_name: fastapi
+    build:
+      context: ./ensemble_database_pipline
+    ports:
+      - "5000:5000"
+    depends_on:
+      - minio
     volumes:
-      - ${MINIO_DATA}:/data:Z
-
-    command: server /data --console-address ":9001"
-
+      - ./ensemble_database_pipline:/app
+    networks:
+      - appnet
     restart: unless-stopped
+
+  minio:
+    container_name: minio
+    image: minio/minio
+    environment:
+      MINIO_ROOT_USER: minio
+      MINIO_ROOT_PASSWORD: minio123
+      MINIO_NOTIFY_WEBHOOK_ENABLE_1: "on"
+      # Use service name instead of IP
+      MINIO_NOTIFY_WEBHOOK_ENDPOINT_1: "http://fastapi:5000/minio-event"
+      MINIO_NOTIFY_WEBHOOK_QUEUE_LIMIT_1: "10"
+      MINIO_NOTIFY_WEBHOOK_AUTH_TOKEN_1: ""  # Optional: add auth token
+    command: server /data --console-address ":9001"
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - minio_data:/data
+    networks:
+      - appnet
+
+
+  mc-setup:
+    image: minio/mc
+    depends_on:
+      - minio
+    entrypoint: >
+      /bin/sh -c "
+      sleep 5;
+      mc alias set myminio http://minio:9000 minio minio123;
+      mc mb myminio/mybucket;
+      mc event add myminio/mybucket arn:minio:sqs::1:webhook --event put,delete;
+      echo 'Konfiguracja zakończona!';
+      tail -f /dev/null
+      "
+    networks:
+      - appnet
+
+volumes:
+  minio_data:
+
+networks:
+  appnet:
+    driver: bridge
