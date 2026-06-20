@@ -2,6 +2,42 @@ version: "3.8"
 
 services:
 
+#==================================================
+# Ollama service for embedding
+#==================================================
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    ports:
+      - "11435:11434"
+    volumes:
+      - ollama_data:/root/.ollama  
+    networks:
+      - appnet
+    restart: unless-stopped
+
+  ollama-init:
+    image: ollama/ollama:latest
+    depends_on:
+      - ollama
+    volumes:
+      - ollama_data:/root/.ollama  
+    networks:
+      - appnet
+    environment:
+      - OLLAMA_HOST=http://ollama:11434   
+    entrypoint: >
+      /bin/sh -c "
+      sleep 10;
+      ollama pull nomic-embed-text;
+      echo 'DONE';
+      tail -f /dev/null
+      "
+#==================================================
+# Redis service for Celery broker
+#==================================================
+
   redis:
     image: redis:7
     ports:
@@ -9,14 +45,20 @@ services:
     networks:
       - appnet
 
+
   worker:
     build:
       context: ./ensemble_database_pipline
     command: celery -A celeryModule.tasksCelery worker -l info
     depends_on:
       - redis
+      - ollama
     networks:
       - appnet
+
+#==================================================
+# FastAPI service
+#==================================================
 
   fastapi:
     container_name: fastapi
@@ -32,6 +74,11 @@ services:
       - appnet
     restart: unless-stopped
 
+#==================================================
+# MinIO service for S3-compatible storage
+#==================================================
+
+
   minio:
     container_name: minio
     image: minio/minio
@@ -39,10 +86,9 @@ services:
       MINIO_ROOT_USER: minio
       MINIO_ROOT_PASSWORD: minio123
       MINIO_NOTIFY_WEBHOOK_ENABLE_1: "on"
-      # Use service name instead of IP
       MINIO_NOTIFY_WEBHOOK_ENDPOINT_1: "http://fastapi:5000/minio-event"
       MINIO_NOTIFY_WEBHOOK_QUEUE_LIMIT_1: "10"
-      MINIO_NOTIFY_WEBHOOK_AUTH_TOKEN_1: ""  # Optional: add auth token
+      MINIO_NOTIFY_WEBHOOK_AUTH_TOKEN_1: ""
     command: server /data --console-address ":9001"
     ports:
       - "9000:9000"
@@ -51,7 +97,6 @@ services:
       - minio_data:/data
     networks:
       - appnet
-
 
   mc-setup:
     image: minio/mc
@@ -69,8 +114,16 @@ services:
     networks:
       - appnet
 
+
+
+
+
+
 volumes:
   minio_data:
+  ollama_data:
+  # qdrant_data:
+
 
 networks:
   appnet:
