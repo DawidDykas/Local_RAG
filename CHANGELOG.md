@@ -2,6 +2,13 @@
 
 
 
+## v0.4.1 (2026-06-22)
+
+### Fix
+
+* fix: detele trashs ([`2ce4692`](https://github.com/DawidDykas/Local_RAG/commit/2ce46929f04fb146dcac69131ffccf18907ee148))
+
+
 ## v0.4.0 (2026-06-20)
 
 ### Feature
