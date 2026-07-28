@@ -1,11 +1,11 @@
-from qdrant_client import QdrantClient
 from qdrant_client.models import VectorParams, Distance, Filter, FieldCondition, MatchValue
 from typing import List, Dict, Optional, Any
 from datetime import datetime
 import uuid
-
-from log_config.logger_config import logger
-
+from urllib.parse import unquote_plus
+from qdrant_client.http import models
+from core.logger_config import logger
+from infrastructure.vector_db.client import QdrantClientInstance 
 # =========================
 # CONFIGURATION
 # =========================
@@ -17,7 +17,7 @@ DISTANCE = Distance.COSINE
 class QdrantManager:
     """Manager class for Qdrant operations (save, search, delete)."""
     
-    def __init__(self, host: str = "qdrant", port: int = 6333):
+    def __init__(self):
         """
         Initialize connection to Qdrant.
 
@@ -25,10 +25,7 @@ class QdrantManager:
             host: Hostname or IP address.
             port: Port (default 6333 for REST API).
         """
-        self.client = QdrantClient(
-            host=host,
-            port=port
-        )
+        self.client = QdrantClientInstance
         self.collection_name = COLLECTION_NAME
         self._ensure_collection()
     
@@ -45,9 +42,9 @@ class QdrantManager:
                     distance=DISTANCE
                 )
             )
-            logger.info(f"✅ Collection '{self.collection_name}' created!")
+            logger.debug(f"✅ Collection '{self.collection_name}' created!")
         else:
-            logger.info(f"ℹ️ Collection '{self.collection_name}' already exists")
+            logger.debug(f"ℹ️ Collection '{self.collection_name}' already exists")
     
     def save_embeddings(
         self,
@@ -113,7 +110,7 @@ class QdrantManager:
                 wait=True
             )
             
-            logger.info(f"✅ Saved {len(points)} vectors to Qdrant")
+            logger.debug(f"✅ Saved {len(points)} vectors to Qdrant")
             
             return {
                 "status": "success",
@@ -138,9 +135,6 @@ class QdrantManager:
             Dict with deletion statistics.
         """
         try:
-            from urllib.parse import unquote_plus
-            from qdrant_client.http import models
-            
             file_id = unquote_plus(file_id)
             
             # Search for points with this file_name
@@ -169,9 +163,9 @@ class QdrantManager:
                     collection_name=self.collection_name,
                     points_selector=point_ids
                 )
-                logger.info(f"🗑️ Deleted {len(point_ids)} points for file: {file_id}")
+                logger.debug(f"🗑️ Deleted {len(point_ids)} points for file: {file_id}")
             else:
-                logger.info(f"ℹ️ No points found for file: {file_id}")
+                logger.debug(f" No points found for file: {file_id}")
             
             return {
                 "status": "success",
@@ -224,7 +218,7 @@ class QdrantManager:
             limit=limit,
             score_threshold=score_threshold,
             with_payload=with_payload,
-            filter=filter_obj
+            query_filter=filter_obj
         )
         
         # Convert results to dicts
@@ -237,7 +231,7 @@ class QdrantManager:
                 "vector": result.vector if hasattr(result, 'vector') else None
             })
         
-        logger.info(f"🔍 Found {len(output)} results")
+        logger.debug(f"🔍 Found {len(output)} results")
         return output
     
     def search_by_text(
@@ -309,9 +303,9 @@ class QdrantManager:
                     collection_name=self.collection_name,
                     points_selector=point_ids
                 )
-                logger.info(f"🗑️ Deleted {len(point_ids)} points for file: {file_name}")
+                logger.debug(f"🗑️ Deleted {len(point_ids)} points for file: {file_name}")
             else:
-                logger.info(f"ℹ️ No points to delete for file: {file_name}")
+                logger.debug(f"ℹ️ No points to delete for file: {file_name}")
             
             return {
                 "status": "success",
@@ -358,15 +352,3 @@ class QdrantManager:
 # Create a global instance (to be used across the application)
 qdrant_manager = QdrantManager()
 
-# Helper functions for easy import
-def save_to_qdrant(nodes, embeddings, file_name, bucket, metadata=None):
-    """Shortcut function to save embeddings."""
-    return qdrant_manager.save_embeddings(nodes, embeddings, file_name, bucket, metadata)
-
-def search_in_qdrant(query_vector, limit=5, filters=None):
-    """Shortcut function to search vectors."""
-    return qdrant_manager.search(query_vector, limit, filters=filters)
-
-def search_text_in_qdrant(query_text, embed_function, limit=5, filters=None):
-    """Shortcut function to search by text."""
-    return qdrant_manager.search_by_text(query_text, embed_function, limit, filters=filters)

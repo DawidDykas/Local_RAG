@@ -1,4 +1,4 @@
-version: "3.8"
+# version: "3.8"
 
 services:
 
@@ -12,28 +12,47 @@ services:
     ports:
       - "11435:11434"
     volumes:
-      - ollama_data:/root/.ollama  
+      - ollama_data:/root/.ollama
     networks:
       - appnet
     restart: unless-stopped
+    gpus: all
+
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
 
   ollama-init:
     image: ollama/ollama:latest
+
+    # depends_on:
     depends_on:
       - ollama
+
     volumes:
-      - ollama_data:/root/.ollama  
+      - ollama_data:/root/.ollama
+
     networks:
       - appnet
+
     environment:
-      - OLLAMA_HOST=http://ollama:11434   
+      OLLAMA_HOST: http://ollama:11434
+
     entrypoint: >
       /bin/sh -c "
-      sleep 10;
+      set -e;
+
+      echo 'Pulling models...';
+
+      ollama pull gemma3:4b;
       ollama pull nomic-embed-text;
+
       echo 'DONE';
-      tail -f /dev/null
       "
+
 #==================================================
 # Redis service for Celery broker
 #==================================================
@@ -48,8 +67,8 @@ services:
 
   worker:
     build:
-      context: ./document_processing_pipeline
-    command: celery -A celeryModule.tasksCelery worker -l info
+      context: ./app
+    command: celery -A workers.tasksCelery worker -l info
     depends_on:
       - redis
       - ollama
@@ -63,16 +82,21 @@ services:
   fastapi:
     container_name: fastapi
     build:
-      context: ./document_processing_pipeline
+      context: ./app
     ports:
       - "5000:5000"
     depends_on:
-      - minio
+      ollama-init:
+        condition: service_completed_successfully
+      ollama:
+        condition: service_healthy
     volumes:
-      - ./document_processing_pipeline:/app
+      - ./app:/app
     networks:
       - appnet
     restart: unless-stopped
+
+
 
 #==================================================
 # MinIO service for S3-compatible storage

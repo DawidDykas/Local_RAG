@@ -6,7 +6,12 @@ boto3
 python-dotenv
 llama-index
 llama-index-embeddings-ollama
+llama-index-vector-stores-qdrant
 llama-index-core
 pymupdf
 python-docx
 qdrant_client
+pydantic
+pydantic_settings
+pandas
+beautifulsoup4

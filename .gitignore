@@ -5,7 +5,7 @@ build/
 dist/
 wheels/
 *.egg-info
-
+# minio_server/data/
 data
 
 # Virtual environments
@@ -14,3 +14,4 @@ data
 data
 config/.env
 test.ipynb
+*.log
