@@ -2,6 +2,15 @@
 
 
 
+## v0.5.0 (2026-07-28)
+
+### Feature
+
+* feat: remove old pyproject init ([`5c8742b`](https://github.com/DawidDykas/Local_RAG/commit/5c8742b90c3c03818ee020ffab36d2986201b1c6))
+
+* feat: refactoring code ([`18058cb`](https://github.com/DawidDykas/Local_RAG/commit/18058cb52cbd3dca173d80e6bc3f0114c2039679))
+
+
 ## v0.4.1 (2026-06-22)
 
 ### Fix
