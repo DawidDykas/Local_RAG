@@ -2,6 +2,29 @@
 
 
 
+## v0.6.2 (2026-08-05)
+
+### Fix
+
+* fix: Format code with Black ([`4e8b56c`](https://github.com/DawidDykas/Local_RAG/commit/4e8b56ccea29c5d02d5c79afda1fd86b4155390e))
+
+### Unknown
+
+* Enable continue-on-error for ruff check
+
+Add error handling for ruff check and generate report ([`e604bf5`](https://github.com/DawidDykas/Local_RAG/commit/e604bf5078221b485e230bf0716a018673611c50))
+
+* Update ruff command to include --fix option
+
+Fix code style issues automatically using ruff. ([`27e68b1`](https://github.com/DawidDykas/Local_RAG/commit/27e68b1c4b969578926d9e7881775de8930b2d46))
+
+* Delete .github/realise.yml ([`34477db`](https://github.com/DawidDykas/Local_RAG/commit/34477db96d8aad3f7adca035041651c851057ce4))
+
+* Update Python package installation in workflow ([`a0d57f7`](https://github.com/DawidDykas/Local_RAG/commit/a0d57f795346ca49a9effccfd099944bc5c8732d))
+
+* cli: Add ruff ([`b5fc8c7`](https://github.com/DawidDykas/Local_RAG/commit/b5fc8c78469bfeee1dcfb997dc2b583d64314af0))
+
+
 ## v0.6.1 (2026-08-05)
 
 ### Fix
