@@ -37,7 +37,6 @@ jobs:
 
       # 4. Install project dependencies including dev
       - name: Install dependencies
-        working-directory: backend
         run: |
           pip install uv
           uv sync

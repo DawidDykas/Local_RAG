@@ -10,7 +10,6 @@ data
 
 # Virtual environments
 .venv
-.env
 data
 config/.env
 test.ipynb
