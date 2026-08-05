@@ -2,6 +2,17 @@
 
 
 
+## v0.6.1 (2026-08-05)
+
+### Fix
+
+* fix: Format code with Black ([`5315db3`](https://github.com/DawidDykas/Local_RAG/commit/5315db383a61c1b506ca298da90f209f15adc51e))
+
+### Unknown
+
+* cli: Add black review ([`5042b24`](https://github.com/DawidDykas/Local_RAG/commit/5042b24efdbebc2a7dfd7c62272fe327be2b4a8d))
+
+
 ## v0.6.0 (2026-08-05)
 
 ### Documentation
