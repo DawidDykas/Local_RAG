@@ -101,9 +101,10 @@ class QdrantManager:
                 "payload": payload
             }
             points.append(point)
-        
+
         # Save to Qdrant
         try:
+            logger.info(f"Saving {len(points)} points to Qdrant collection '{self.collection_name}'")
             response = self.client.upsert(
                 collection_name=self.collection_name,
                 points=points,
@@ -350,5 +351,5 @@ class QdrantManager:
 # =========================
 
 # Create a global instance (to be used across the application)
-qdrant_manager = QdrantManager()
+# qdrant_manager = QdrantManager()
 

@@ -10,7 +10,7 @@ services:
     image: ollama/ollama:latest
     container_name: ollama
     ports:
-      - "11435:11434"
+      - "${OLLAMA_SERVER_PORT}:11434"
     volumes:
       - ollama_data:/root/.ollama
     networks:
@@ -60,7 +60,7 @@ services:
   redis:
     image: redis:7
     ports:
-      - "6379:6379"
+      - "${REDIS_PORT}:6379"
     networks:
       - appnet
 
@@ -84,7 +84,7 @@ services:
     build:
       context: ./app
     ports:
-      - "5000:5000"
+      - "${FASTAPI_PORT}:5000"
     depends_on:
       ollama-init:
         condition: service_completed_successfully
@@ -115,8 +115,8 @@ services:
       MINIO_NOTIFY_WEBHOOK_AUTH_TOKEN_1: ""
     command: server /data --console-address ":9001"
     ports:
-      - "9000:9000"
-      - "9001:9001"
+      - "${MINIO_SERVER_PORT}:9000"
+      - "${MINIO_CONSOLE_PORT}:9001"
     volumes:
       - minio_data:/data
     networks:
@@ -147,8 +147,8 @@ services:
     image: qdrant/qdrant:latest
     container_name: qdrant
     ports:
-      - "6333:6333"   # REST API
-      - "6334:6334"   # gRPC
+      - "${QDRANT_PORT}:6333"   # REST API
+      - "${QDRANT_QRPC_PORT}:6334"   # gRPC
     volumes:
       - qdrant_data:/qdrant/storage
     networks:

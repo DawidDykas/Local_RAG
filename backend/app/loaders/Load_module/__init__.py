@@ -1,12 +1,11 @@
-from .document_loader import get_loader, chunk_text
 from .loader import PDFLoader, DOCXLoader, CSVLoader, HTMLLoader, TextLoader
+from .document_loader import process_file
 
-
-__all__ = ["get_loader", 
-           "chunk_text", 
+__all__ = [ 
            "PDFLoader", 
            "DOCXLoader", 
            "CSVLoader", 
            "HTMLLoader", 
-           "TextLoader"
+           "TextLoader",
+           "process_file"
            ]

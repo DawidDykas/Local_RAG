@@ -1,8 +1,9 @@
 from urllib.parse import unquote_plus
 from loaders.Load_module.document_loader import process_file
-from services.QdrantServices import qdrant_manager
+from services.qdrantServices import QdrantManager
 from core.logger_config import logger
 
+qdrant_manager = QdrantManager()
 
 def handle_object_created(event_data: dict) -> None:
     """

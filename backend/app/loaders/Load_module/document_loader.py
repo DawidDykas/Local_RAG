@@ -9,7 +9,7 @@ from llama_index.embeddings.ollama import OllamaEmbedding
 from llama_index.core import Document
 from core.logger_config import logger
 
-from services.QdrantServices import qdrant_manager
+from services.qdrantServices import QdrantManager
 from datetime import datetime
 import re
 
@@ -19,7 +19,7 @@ embed_model = OllamaEmbedding(
 )
 
 splitter = SentenceSplitter(chunk_size=500, chunk_overlap=50)
-
+qdrant_manager = QdrantManager()
 
 
 # =========================

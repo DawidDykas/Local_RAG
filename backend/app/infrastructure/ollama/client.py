@@ -40,7 +40,7 @@ class OllamaClient:
             json=payload,
         )
 
-        logger.debug(f"Ollama API request payload: {payload}")
+        logger.debug(f"Ollama API request response: {response}")
 
 
 

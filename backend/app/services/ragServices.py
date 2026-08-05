@@ -2,12 +2,12 @@ import requests
 import json
 from core.global_config import minio_database_settings
 from core.logger_config import logger
-from services.QdrantServices import qdrant_manager
+from services.qdrantServices import QdrantManager
 from llama_index.core import VectorStoreIndex, Settings
 from llama_index.vector_stores.qdrant import QdrantVectorStore
 from llama_index.embeddings.ollama import OllamaEmbedding
 from infrastructure.ollama.client import OllamaClientInstance
-
+from infrastructure.vector_db.client import QdrantClientInstance
 class OllamaService:
     """
     Service class responsible for communication with an Ollama LLM server.
@@ -41,7 +41,7 @@ class OllamaService:
     def __init__(
         self,
         ollama_client,
-        top_k=10
+        top_k: int = 10
     ):
 
         self.client = ollama_client
@@ -62,7 +62,7 @@ class OllamaService:
         # =====================================
 
         self.vector_store = QdrantVectorStore(
-            client=qdrant_manager.client,
+            client=QdrantClientInstance,
             collection_name="documents"
         )
 
@@ -266,11 +266,6 @@ class OllamaService:
 
     def searchAndGenerate(self, user_prompt: str) -> str:
 
-        # =====================================================
-        # 1. QUERY PLANNER
-        # Generowanie wielu zapytań do wyszukiwania
-        # =====================================================
-
         planner_result = self.ollamaPlanner(user_prompt)
 
         query_plan = planner_result.get(
@@ -283,18 +278,10 @@ class OllamaService:
         )
 
 
-        # =====================================================
-        # 3. RETRIEVER
-        # =====================================================
-
         retriever = self.index.as_retriever(
             similarity_top_k=5
         )
 
-
-        # =====================================================
-        # 4. MULTI QUERY SEARCH
-        # =====================================================
 
         all_nodes = []
 
@@ -312,10 +299,6 @@ class OllamaService:
             all_nodes.extend(nodes)
 
 
-
-        # =====================================================
-        # 5. DEDUPLIKACJA + NAJLEPSZY SCORE
-        # =====================================================
 
         unique_nodes = {}
 
@@ -336,11 +319,6 @@ class OllamaService:
                 unique_nodes[node_id] = node
 
 
-
-        # =====================================================
-        # 6. SORTOWANIE PO SCORE
-        # =====================================================
-
         nodes = sorted(
             unique_nodes.values(),
             key=lambda x: x.score or 0,
@@ -353,9 +331,7 @@ class OllamaService:
             logger.debug(
                 f"score={node.score}, id={node.node.node_id}"
             )
-        # =====================================================
-        # 7. BUDOWANIE CONTEXTU
-        # =====================================================
+
 
         context = "\n\n".join(
             node.node.get_content()
@@ -367,10 +343,6 @@ class OllamaService:
             f"Context size: {len(context)} chars"
         )
 
-
-        # =====================================================
-        # 8. GENEROWANIE ODPOWIEDZI
-        # =====================================================
 
         answer = self.ollamaFinalAnswer(
             user_prompt=user_prompt,

@@ -1,8 +1,7 @@
-from .QdrantServices import QdrantServices, qdrant_manager
-from .RAGServices import OllamaService, ollamaInit
+from .qdrantServices import QdrantManager
+from .ragServices import OllamaService, ollamaInit
 
-__all__ = ["QdrantServices", 
+__all__ = ["QdrantManager", 
            "OllamaService",
-           "qdrant_manager",
            "ollamaInit"]
 

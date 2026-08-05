@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from core.logger_config import logger
-from services.RAGServices import ollamaInit
+from services.ragServices import ollamaInit
 from api.schemas.queryModels import TextRequest, TextResponse
 
 
