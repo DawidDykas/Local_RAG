@@ -2,6 +2,19 @@
 
 
 
+## v0.6.3 (2026-08-05)
+
+### Fix
+
+* fix: Format code with Black ([`6ce3e1b`](https://github.com/DawidDykas/Local_RAG/commit/6ce3e1b5723bb1ca235b0d323f24e4fac96d7efa))
+
+### Unknown
+
+* Modify ruff command to fix and format code
+
+Updated the ruff command to include auto-fix and format. ([`b54a0ff`](https://github.com/DawidDykas/Local_RAG/commit/b54a0ff2a65608ad22a76f7883970e06b46e767f))
+
+
 ## v0.6.2 (2026-08-05)
 
 ### Fix
