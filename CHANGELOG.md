@@ -2,6 +2,19 @@
 
 
 
+## v0.6.4 (2026-08-05)
+
+### Fix
+
+* fix: Format code with Black ([`b8c9cc8`](https://github.com/DawidDykas/Local_RAG/commit/b8c9cc820ed1dd3e4fe0a40ef2686eb16549823a))
+
+### Unknown
+
+* Modify readme
+
+Removed test running instructions from README. ([`9a84f2a`](https://github.com/DawidDykas/Local_RAG/commit/9a84f2a5e99f5c914880193b755ea716ea0276a1))
+
+
 ## v0.6.3 (2026-08-05)
 
 ### Fix
