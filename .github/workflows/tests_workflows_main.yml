@@ -41,18 +41,18 @@ jobs:
           pip install uv
           uv sync
 
- #     - name: Run Black
- #       run: |
- #         black .
+      - name: Run Black
+        run: |
+          black .
 
 
-#      - name: Commit and push Black changes
-#        run: |
-#         git config user.name "github-actions"
-#         git config user.email "github-actions@github.com"
-#          git add .
-#          git commit -m "fix: Format code with Black" || echo "fix: No #changes to commit"
-#          git push
+      - name: Commit and push Black changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add .
+          git commit -m "fix: Format code with Black" || echo "fix: No #changes to commit"
+          git push
 
       - name: Python Semantic Release
         id: release
