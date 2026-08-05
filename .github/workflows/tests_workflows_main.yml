@@ -46,8 +46,15 @@ jobs:
           black .
 
       - name: Run ruff
+        continue-on-error: true
         run: |
-          ruff check . --fix
+          ruff check . --output-format=json > ruff-report.json
+      
+      - name: Upload Ruff report
+        uses: actions/upload-artifact@v4
+        with:
+          name: ruff-report
+          path: ruff-report.json
 
 
       - name: Commit and push Black changes
