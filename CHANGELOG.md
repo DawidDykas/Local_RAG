@@ -2,6 +2,27 @@
 
 
 
+## v0.7.0 (2026-08-05)
+
+### Feature
+
+* feat: Fix workflow ([`501a1d4`](https://github.com/DawidDykas/Local_RAG/commit/501a1d4e4de886fe2f02f294739e833e70a2df49))
+
+* feat: Fix workflow ([`8364ecc`](https://github.com/DawidDykas/Local_RAG/commit/8364ecc1e362f81ba8376b5e241de3ae63eebdee))
+
+### Fix
+
+* fix: Format code with Black ([`e30c562`](https://github.com/DawidDykas/Local_RAG/commit/e30c56250516673681baff8289aabbf5e7370f15))
+
+* fix: resolve pyproject merge conflict ([`4868647`](https://github.com/DawidDykas/Local_RAG/commit/486864739ccce231015dc6f68821bdeb2f1860ac))
+
+* fix: pyproject settings ([`0d6e113`](https://github.com/DawidDykas/Local_RAG/commit/0d6e1134c2484a160d5a7cb0685cc5de0b1a0a83))
+
+### Unknown
+
+* Rename project from &#39;data-search&#39; to &#39;app&#39; ([`760c9c4`](https://github.com/DawidDykas/Local_RAG/commit/760c9c4c0725606cb09e53c69b5314bda8ad8060))
+
+
 ## v0.6.5 (2026-08-05)
 
 ### Fix
