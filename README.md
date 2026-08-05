@@ -192,17 +192,11 @@ pip install uv
 uv sync
 ```
 
-### Run tests
-
-```bash
-cd backend
-pytest app/tests/ -v
-```
 
 ### Code formatting
 
 ```bash
-black . --line-length 100
+black . 
 ruff check .
 ```
 
