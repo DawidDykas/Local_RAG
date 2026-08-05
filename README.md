@@ -128,30 +128,29 @@ Receives MinIO webhook events for file create/delete operations. Handled automat
 
 ```
 Local_RAG/
-├── backend/
-│   ├── app/
-│   │   ├── api/                    # FastAPI routes & schemas
-│   │   │   ├── main.py             # App entrypoint
-│   │   │   ├── routers/            # Route handlers
-│   │   │   └── schemas/            # Pydantic models
-│   │   ├── core/                   # Config & logging
-│   │   │   ├── global_config.py    # Settings (MinIO, Celery, FastAPI)
-│   │   │   └── logger_config.py    # Rotating file + console logger
-│   │   ├── infrastructure/         # External service clients
-│   │   │   ├── celery/             # Celery app config
-│   │   │   ├── minio/              # S3/Boto3 client
-│   │   │   ├── ollama/             # Ollama HTTP client
-│   │   │   └── vector_db/          # Qdrant client
-│   │   ├── loaders/                # Document parsers
-│   │   │   └── Load_module/        # PDF, DOCX, CSV, HTML, TXT loaders
-│   │   ├── services/               # Business logic
-│   │   │   ├── embeddingServices.py    # Document ingestion pipeline
-│   │   │   ├── qdrantServices.py       # Vector CRUD operations
-│   │   │   ├── ragServices.py          # RAG query pipeline
-│   │   │   └── storage_events/         # MinIO event handlers
-│   │   ├── workers/                # Celery task definitions
-│   ├── docker-compose.yml          # Service orchestration
-│   └── Dockerfile
+├── app/
+│   ├── api/                    # FastAPI routes & schemas
+│   │   ├── main.py             # App entrypoint
+│   │   ├── routers/            # Route handlers
+│   │   └── schemas/            # Pydantic models
+│   ├── core/                   # Config & logging
+│   │   ├── global_config.py    # Settings (MinIO, Celery, FastAPI)
+│   │   └── logger_config.py    # Rotating file + console logger
+│   ├── infrastructure/         # External service clients
+│   │   ├── celery/             # Celery app config
+│   │   ├── minio/              # S3/Boto3 client
+│   │   ├── ollama/             # Ollama HTTP client
+│   │   └── vector_db/          # Qdrant client
+│   ├── loaders/                # Document parsers
+│   │   └── Load_module/        # PDF, DOCX, CSV, HTML, TXT loaders
+│   ├── services/               # Business logic
+│   │   ├── embeddingServices.py    # Document ingestion pipeline
+│   │   ├── qdrantServices.py       # Vector CRUD operations
+│   │   ├── ragServices.py          # RAG query pipeline
+│   │   └── storage_events/         # MinIO event handlers
+│   ├── workers/                # Celery task definitions
+├── docker-compose.yml          # Service orchestration
+├── Dockerfile
 ├── .github/
 │   └── workflows/                  # CI/CD pipelines
 ├── CHANGELOG.md
