@@ -150,7 +150,6 @@ Local_RAG/
 │   │   │   ├── ragServices.py          # RAG query pipeline
 │   │   │   └── storage_events/         # MinIO event handlers
 │   │   ├── workers/                # Celery task definitions
-│   │   └── tests/                  # Unit & API tests
 │   ├── docker-compose.yml          # Service orchestration
 │   └── Dockerfile
 ├── .github/
