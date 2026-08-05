@@ -2,6 +2,17 @@
 
 
 
+## v0.6.0 (2026-08-05)
+
+### Documentation
+
+* docs: Add readme ([`3ea87c3`](https://github.com/DawidDykas/Local_RAG/commit/3ea87c3a7f6904e05f8d316288973bd6c739bf35))
+
+### Feature
+
+* feat: Refactoring main pipelines ([`28bf123`](https://github.com/DawidDykas/Local_RAG/commit/28bf12330b998134cd62d336167ea75b484016d5))
+
+
 ## v0.5.0 (2026-07-28)
 
 ### Feature
