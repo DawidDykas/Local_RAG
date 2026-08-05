@@ -1,13 +1,9 @@
-import pytest
 import uuid
-from unittest.mock import Mock, patch, MagicMock, call
-from typing import List, Dict, Any
-from datetime import datetime
+from unittest.mock import Mock, patch
 
-from qdrant_client.models import VectorParams, Distance, Filter, FieldCondition, MatchValue
-from qdrant_client.http import models
-
-from services.qdrantServices import QdrantManager, COLLECTION_NAME, VECTOR_SIZE, DISTANCE
+import pytest
+from qdrant_client.models import Distance, VectorParams
+from services.qdrantServices import COLLECTION_NAME, DISTANCE, VECTOR_SIZE, QdrantManager
 
 # =========================
 # FIXTURES

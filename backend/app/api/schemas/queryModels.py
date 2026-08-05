@@ -1,5 +1,5 @@
+
 from pydantic import BaseModel, Field
-from typing import Optional
 
 
 class TextRequest(BaseModel):
@@ -28,10 +28,10 @@ class TextResponse(BaseModel):
         description="Generated response from the Ollama model",
         example="The capital of France is Paris.",
     )
-    tokens_used: Optional[int] = Field(
+    tokens_used: int | None = Field(
         default=None, description="Number of tokens used in the generation", example=45
     )
-    model_name: Optional[str] = Field(
+    model_name: str | None = Field(
         default=None,
         description="Name of the Ollama model used for generation",
         example="llama2:7b",

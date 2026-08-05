@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from api.routers import web_minio_events_routers
-from api.routers import model_routers
+
+from api.routers import model_routers, web_minio_events_routers
 
 app = FastAPI()
 

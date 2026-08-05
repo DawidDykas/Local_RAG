@@ -1,17 +1,15 @@
-from infrastructure.minio.client import s3
-from loaders.Load_module import PDFLoader, DOCXLoader, CSVLoader, HTMLLoader, TextLoader
-from typing import List, Dict
+import re
+from datetime import datetime
 from urllib.parse import unquote_plus
 
-from llama_index.core import SimpleDirectoryReader
+from core.logger_config import logger
+from infrastructure.minio.client import s3
+from llama_index.core import Document
 from llama_index.core.node_parser import SentenceSplitter
 from llama_index.embeddings.ollama import OllamaEmbedding
-from llama_index.core import Document
-from core.logger_config import logger
+from loaders.Load_module import CSVLoader, DOCXLoader, HTMLLoader, PDFLoader, TextLoader
 
 from services.qdrantServices import QdrantManager
-from datetime import datetime
-import re
 
 
 class DocumentProcessor:
@@ -70,7 +68,7 @@ class DocumentProcessor:
     # CHUNKING
     # =========================
     @staticmethod
-    def chunk_text(text: str, max_size: int = 500) -> List[str]:
+    def chunk_text(text: str, max_size: int = 500) -> list[str]:
         """
         Split text into smaller chunks.
 
@@ -121,7 +119,7 @@ class DocumentProcessor:
 
         return chunks
 
-    def process_file(self, bucket: str, key: str, s3=s3) -> Dict:
+    def process_file(self, bucket: str, key: str, s3=s3) -> dict:
         """
         Process document from object storage and store vector embeddings.
 

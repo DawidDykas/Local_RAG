@@ -1,4 +1,4 @@
-from .loader import PDFLoader, DOCXLoader, CSVLoader, HTMLLoader, TextLoader
 from .document_loader import process_file
+from .loader import CSVLoader, DOCXLoader, HTMLLoader, PDFLoader, TextLoader
 
-__all__ = ["PDFLoader", "DOCXLoader", "CSVLoader", "HTMLLoader", "TextLoader", "process_file"]
+__all__ = ["CSVLoader", "DOCXLoader", "HTMLLoader", "PDFLoader", "TextLoader", "process_file"]

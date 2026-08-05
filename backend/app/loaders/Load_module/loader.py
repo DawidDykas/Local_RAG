@@ -1,9 +1,10 @@
 import io
+
 import fitz  # PyMuPDF
 import pandas as pd
 from bs4 import BeautifulSoup
-from docx import Document
 from core.logger_config import logger
+from docx import Document
 
 # =========================
 # LOADERS

@@ -1,5 +1,5 @@
-from fastapi import APIRouter, Request
 from core.logger_config import logger
+from fastapi import APIRouter, Request
 from workers.tasksCelery import webhook_minio_events
 
 router = APIRouter()

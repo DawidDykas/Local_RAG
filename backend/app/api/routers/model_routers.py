@@ -1,7 +1,7 @@
-from fastapi import APIRouter
-from core.logger_config import logger
-from services.ragServices import ollamaInit
 from api.schemas.queryModels import TextRequest, TextResponse
+from core.logger_config import logger
+from fastapi import APIRouter
+from services.ragServices import ollamaInit
 
 router_modelOLLAMA = APIRouter(prefix="/ollama-event", tags=["Ollama"])
 

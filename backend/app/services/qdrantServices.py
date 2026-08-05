@@ -1,11 +1,12 @@
-from qdrant_client.models import VectorParams, Distance, Filter, FieldCondition, MatchValue
-from typing import List, Dict, Optional, Any
-from datetime import datetime
 import uuid
+from datetime import datetime
+from typing import Any
 from urllib.parse import unquote_plus
-from qdrant_client.http import models
+
 from core.logger_config import logger
 from infrastructure.vector_db.client import QdrantClientInstance
+from qdrant_client.http import models
+from qdrant_client.models import Distance, FieldCondition, Filter, MatchValue, VectorParams
 
 # =========================
 # CONFIGURATION
@@ -47,12 +48,12 @@ class QdrantManager:
 
     def save_embeddings(
         self,
-        nodes: List[Any],
-        embeddings: List[List[float]],
+        nodes: list[Any],
+        embeddings: list[list[float]],
         file_name: str,
         bucket: str,
-        metadata: Optional[Dict] = None,
-    ) -> Dict[str, Any]:
+        metadata: dict | None = None,
+    ) -> dict[str, Any]:
         """
         Save embeddings to Qdrant.
 
@@ -124,7 +125,7 @@ class QdrantManager:
             logger.error(f"❌ Error saving to Qdrant: {e}")
             raise
 
-    def delete_embeddings_by_file_id(self, file_id: str) -> Dict:
+    def delete_embeddings_by_file_id(self, file_id: str) -> dict:
         """
         Delete all points associated with a given file.
 
@@ -171,12 +172,12 @@ class QdrantManager:
 
     def search(
         self,
-        query_vector: List[float],
+        query_vector: list[float],
         limit: int = 5,
-        score_threshold: Optional[float] = None,
-        filters: Optional[Dict] = None,
+        score_threshold: float | None = None,
+        filters: dict | None = None,
         with_payload: bool = True,
-    ) -> List[Dict]:
+    ) -> list[dict]:
         """
         Search for similar vectors.
 
@@ -228,9 +229,9 @@ class QdrantManager:
         query_text: str,
         embed_function,
         limit: int = 5,
-        score_threshold: Optional[float] = None,
-        filters: Optional[Dict] = None,
-    ) -> List[Dict]:
+        score_threshold: float | None = None,
+        filters: dict | None = None,
+    ) -> list[dict]:
         """
         Search by text (automatically generates embedding).
 
@@ -255,7 +256,7 @@ class QdrantManager:
             filters=filters,
         )
 
-    def delete_by_file(self, file_name: str) -> Dict:
+    def delete_by_file(self, file_name: str) -> dict:
         """
         Delete all points associated with a given file name.
 
@@ -294,7 +295,7 @@ class QdrantManager:
             logger.error(f"❌ Error deleting: {e}")
             raise
 
-    def get_collection_info(self) -> Dict:
+    def get_collection_info(self) -> dict:
         """
         Retrieve information about the collection.
 

@@ -1,10 +1,11 @@
-from infrastructure.celery.client import celery_app
+from collections.abc import Callable
+
 from core.logger_config import logger
+from infrastructure.celery.client import celery_app
 from services.storage_events.events import EventType
 from services.storage_events.handlers import handle_object_created, handle_object_removed
-from typing import Callable, Dict
 
-methods: Dict[EventType, Callable] = {
+methods: dict[EventType, Callable] = {
     EventType.OBJECT_REMOVED_DELETE: handle_object_removed,
     EventType.OBJECT_CREATED: handle_object_created,
 }

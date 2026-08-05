@@ -1,4 +1,3 @@
-from urllib import response
 
 import requests
 from core.logger_config import logger

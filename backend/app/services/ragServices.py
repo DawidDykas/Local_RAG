@@ -1,13 +1,11 @@
-import requests
 import json
-from core.global_config import minio_database_settings
+
 from core.logger_config import logger
-from services.qdrantServices import QdrantManager
-from llama_index.core import VectorStoreIndex, Settings
-from llama_index.vector_stores.qdrant import QdrantVectorStore
-from llama_index.embeddings.ollama import OllamaEmbedding
 from infrastructure.ollama.client import OllamaClientInstance
 from infrastructure.vector_db.client import QdrantClientInstance
+from llama_index.core import Settings, VectorStoreIndex
+from llama_index.embeddings.ollama import OllamaEmbedding
+from llama_index.vector_stores.qdrant import QdrantVectorStore
 
 
 class OllamaService:

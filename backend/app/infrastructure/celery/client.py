@@ -1,7 +1,7 @@
 # from config.setting import celery_settings
-from celery import Celery
-from core.logger_config import logger
 from core.global_config import celery_settings
+
+from celery import Celery
 
 try:
     celery_app = Celery(
