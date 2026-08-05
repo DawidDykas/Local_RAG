@@ -1,5 +1,5 @@
 [project]
-name = "data-search"
+name = "app"
 version = "0.6.5"
 description = "Local RAG backend"
 readme = "README.md"
@@ -43,7 +43,15 @@ target-version = "py313"
 [tool.mypy]
 python_version = "3.13"
 
+[tool.hatch.build.targets.wheel]
+packages = [
+    "app"
+]
+
 
 [build-system]
-requires = ["hatchling"]
+requires = [
+    "hatchling"
+]
+
 build-backend = "hatchling.build"
