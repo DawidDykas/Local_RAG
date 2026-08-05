@@ -5,10 +5,10 @@ from bs4 import BeautifulSoup
 from docx import Document
 from core.logger_config import logger
 
-
 # =========================
 # LOADERS
 # =========================
+
 
 class PDFLoader:
     """
@@ -41,19 +41,11 @@ class PDFLoader:
         try:
             logger.debug("Loading PDF document...")
 
-            doc = fitz.open(
-                stream=data,
-                filetype="pdf"
-            )
+            doc = fitz.open(stream=data, filetype="pdf")
 
-            text = "\n".join(
-                page.get_text()
-                for page in doc
-            )
+            text = "\n".join(page.get_text() for page in doc)
 
-            logger.debug(
-                f"PDF loaded successfully. Pages: {len(doc)}, Characters: {len(text)}"
-            )
+            logger.debug(f"PDF loaded successfully. Pages: {len(doc)}, Characters: {len(text)}")
 
             return text
 
@@ -131,9 +123,7 @@ class CSVLoader:
             df = pd.read_csv(io.BytesIO(data))
             text = df.to_string(index=False)
 
-            logger.debug(
-                f"CSV loaded successfully. Rows: {len(df)}, Columns: {len(df.columns)}"
-            )
+            logger.debug(f"CSV loaded successfully. Rows: {len(df)}, Columns: {len(df.columns)}")
             return text
 
         except Exception as e:
@@ -164,6 +154,7 @@ class HTMLLoader:
             Exception:
                 If HTML parsing fails.
         """
+
     def load(self, data: bytes) -> str:
         try:
             logger.debug("Loading HTML document...")
@@ -171,9 +162,7 @@ class HTMLLoader:
             soup = BeautifulSoup(data, "lxml")
             text = soup.get_text(separator="\n", strip=True)
 
-            logger.debug(
-                f"HTML loaded successfully. Characters extracted: {len(text)}"
-            )
+            logger.debug(f"HTML loaded successfully. Characters extracted: {len(text)}")
             return text
 
         except Exception as e:
@@ -209,9 +198,7 @@ class TextLoader:
 
             text = data.decode("utf-8", errors="ignore")
 
-            logger.debug(
-                f"Text file loaded successfully. Characters: {len(text)}"
-            )
+            logger.debug(f"Text file loaded successfully. Characters: {len(text)}")
             return text
 
         except Exception as e:

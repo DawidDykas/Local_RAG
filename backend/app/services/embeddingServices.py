@@ -23,20 +23,18 @@ class DocumentProcessor:
     and saving them to Qdrant vector database.
     """
 
-    def __init__(self, qdrant_manager = QdrantManager(),
-                 embed_model = OllamaEmbedding(
-                                            model_name="nomic-embed-text",
-                                            base_url="http://ollama:11434"
-                                            ),
-                 splitter = SentenceSplitter(chunk_size=500, chunk_overlap=50)):
+    def __init__(
+        self,
+        qdrant_manager=QdrantManager(),
+        embed_model=OllamaEmbedding(model_name="nomic-embed-text", base_url="http://ollama:11434"),
+        splitter=SentenceSplitter(chunk_size=500, chunk_overlap=50),
+    ):
 
-        
         self.s3_client = s3
-        self.embed_model = embed_model 
+        self.embed_model = embed_model
         self.splitter = splitter
 
         self.qdrant_manager = qdrant_manager
-
 
     # ROUTER
     # =========================
@@ -68,7 +66,6 @@ class DocumentProcessor:
 
         return loaders.get(ext, TextLoader())
 
-
     # =========================
     # CHUNKING
     # =========================
@@ -98,8 +95,7 @@ class DocumentProcessor:
                 "This is test."
             ]
         """
-        sentences = re.split(r'(?<=[.!?])\s+', text)
-
+        sentences = re.split(r"(?<=[.!?])\s+", text)
 
         chunks = []
         current = ""
@@ -110,12 +106,12 @@ class DocumentProcessor:
                     chunks.append(current)
                     current = ""
                 for i in range(0, len(sentence), max_size):
-                    chunks.append(sentence[i:i+max_size])
+                    chunks.append(sentence[i : i + max_size])
 
                 continue
 
             if len(current) + len(sentence) + 1 <= max_size:
-                current += (" " + sentence if current else sentence)
+                current += " " + sentence if current else sentence
             else:
                 chunks.append(current)
                 current = sentence
@@ -125,13 +121,12 @@ class DocumentProcessor:
 
         return chunks
 
-
-    def process_file(self, bucket: str, key: str, s3 = s3) -> Dict:
+    def process_file(self, bucket: str, key: str, s3=s3) -> Dict:
         """
         Process document from object storage and store vector embeddings.
 
         This pipeline performs:
-        
+
         1. Download file from MinIO/S3 bucket.
         2. Detect file extension.
         3. Select appropriate document loader.
@@ -202,13 +197,9 @@ class DocumentProcessor:
             embeddings=embeddings,
             file_name=key,
             bucket=bucket,
-            metadata={
-                "file_extension": ext,
-                "processed_at": str(datetime.now())
-            }
+            metadata={"file_extension": ext, "processed_at": str(datetime.now())},
         )
-        
-        logger.debug(f"✅ Saved to Qdrant: {result}")
-        
-        return result
 
+        logger.debug(f"✅ Saved to Qdrant: {result}")
+
+        return result

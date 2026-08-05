@@ -4,6 +4,7 @@ from workers.tasksCelery import webhook_minio_events
 
 router = APIRouter()
 
+
 @router.post(
     "/minio-event",
     summary="Receive MinIO webhook events",
@@ -17,13 +18,13 @@ router = APIRouter()
 async def handle_minio_event(req: Request) -> None:
     """
     Handle MinIO events - receives event data and logs it
-    
+
     ### Process:
     1. Receives event data as JSON from the MinIO request
     2. Logs the received event
     3. Calls Celery task `webhook_minio_events.delay()` for asynchronous processing
     4. Returns the received data as acknowledgment
-    
+
     ### Possible response codes:
     - **200**: Successfully received and forwarded to Celery
     - **400**: JSON parsing error or other client errors (handled by FastAPI)

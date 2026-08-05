@@ -3,11 +3,7 @@ from core.logger_config import logger
 from services.ragServices import ollamaInit
 from api.schemas.queryModels import TextRequest, TextResponse
 
-
-router_modelOLLAMA = APIRouter(
-    prefix="/ollama-event",
-    tags=["Ollama"]
-)
+router_modelOLLAMA = APIRouter(prefix="/ollama-event", tags=["Ollama"])
 
 
 @router_modelOLLAMA.post(
@@ -39,7 +35,7 @@ and returns a generated response.
 2. Backend forwards query to Ollama.
 3. Ollama generates response.
 4. API returns generated text.
-"""
+""",
 )
 def query(req: TextRequest) -> TextResponse:
     """
@@ -69,15 +65,10 @@ def query(req: TextRequest) -> TextResponse:
         if type(response) != str:
             logger.error(f"Unexpected response type from Ollama: {type(response)}")
             raise ValueError(f"Unexpected response type from Ollama: {type(response)}")
-        
-        return TextResponse(
-            text=response,
-            model_name="ollama"
-        )
+
+        return TextResponse(text=response, model_name="ollama")
 
     except Exception as e:
         logger.error(f"❌ Error handling Ollama request: {e}")
 
-        return TextResponse(
-            text="Error occurred while processing the request"
-        )
+        return TextResponse(text="Error occurred while processing the request")

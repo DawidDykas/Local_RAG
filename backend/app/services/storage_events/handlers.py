@@ -5,6 +5,7 @@ from core.logger_config import logger
 
 qdrant_manager = QdrantManager()
 
+
 def handle_object_created(event_data: dict) -> None:
     """
     Process newly uploaded MinIO object.
@@ -13,13 +14,9 @@ def handle_object_created(event_data: dict) -> None:
     bucket = event_data["Records"][0]["s3"]["bucket"]["name"]
     key = event_data["Records"][0]["s3"]["object"]["key"]
 
-    result = process_file(
-        bucket=bucket,
-        key=key
-    )
+    result = process_file(bucket=bucket, key=key)
 
     logger.debug(result)
-
 
 
 def handle_object_removed(event_data: dict) -> None:
@@ -33,6 +30,4 @@ def handle_object_removed(event_data: dict) -> None:
 
     result = qdrant_manager.delete_by_file(key)
 
-    logger.debug(
-        f"Deleted {result['deleted_count']} vectors"
-    )
+    logger.debug(f"Deleted {result['deleted_count']} vectors")

@@ -3,6 +3,7 @@ from urllib import response
 import requests
 from core.logger_config import logger
 
+
 class OllamaClient:
     """
     Low-level client for Ollama API.
@@ -16,21 +17,14 @@ class OllamaClient:
         self.base_url = base_url.rstrip("/")
         self.model_name = model_name
 
-
-    def chat(
-        self,
-        messages: list,
-        options: dict = None,
-        json_mode: bool = False
-    ) -> str:
+    def chat(self, messages: list, options: dict = None, json_mode: bool = False) -> str:
 
         payload = {
             "model": self.model_name,
             "messages": messages,
             "stream": False,
-            "options": options 
+            "options": options,
         }
-
 
         if json_mode:
             payload["format"] = "json"
@@ -42,9 +36,6 @@ class OllamaClient:
 
         logger.debug(f"Ollama API request response: {response}")
 
-
-
-        
         response.raise_for_status()
         logger.debug(response.json())
         return response.json()["message"]["content"]

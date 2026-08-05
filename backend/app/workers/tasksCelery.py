@@ -6,9 +6,8 @@ from typing import Callable, Dict
 
 methods: Dict[EventType, Callable] = {
     EventType.OBJECT_REMOVED_DELETE: handle_object_removed,
-    EventType.OBJECT_CREATED: handle_object_created
+    EventType.OBJECT_CREATED: handle_object_created,
 }
-
 
 
 @celery_app.task
@@ -45,24 +44,15 @@ def webhook_minio_events(data: dict) -> None:
 
         logger.debug(f"Event type: {event_type}")
 
-        handler = methods.get(
-            EventType(event_type)
-        )
+        handler = methods.get(EventType(event_type))
 
         if handler:
-            logger.debug(
-                f"Found handler for event type: {event_type}"
-            )
+            logger.debug(f"Found handler for event type: {event_type}")
 
             handler(data)
 
         else:
-            logger.warning(
-                f"No handler found for event type: {event_type}"
-            )
+            logger.warning(f"No handler found for event type: {event_type}")
 
     except Exception as e:
-        logger.error(
-            f"Error processing MinIO event: {e}",
-            exc_info=True
-        )
+        logger.error(f"Error processing MinIO event: {e}", exc_info=True)

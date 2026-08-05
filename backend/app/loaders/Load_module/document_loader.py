@@ -13,10 +13,7 @@ from services.qdrantServices import QdrantManager
 from datetime import datetime
 import re
 
-embed_model = OllamaEmbedding(
-    model_name="nomic-embed-text",
-    base_url="http://ollama:11434"
-)
+embed_model = OllamaEmbedding(model_name="nomic-embed-text", base_url="http://ollama:11434")
 
 splitter = SentenceSplitter(chunk_size=500, chunk_overlap=50)
 qdrant_manager = QdrantManager()
@@ -25,6 +22,7 @@ qdrant_manager = QdrantManager()
 # =========================
 # ROUTER
 # =========================
+
 
 def get_loader(ext: str) -> object:
     """
@@ -58,6 +56,7 @@ def get_loader(ext: str) -> object:
 # CHUNKING
 # =========================
 
+
 def chunk_text(text: str, max_size: int = 500) -> List[str]:
     """
     Split text into smaller chunks.
@@ -83,8 +82,7 @@ def chunk_text(text: str, max_size: int = 500) -> List[str]:
             "This is test."
         ]
     """
-    sentences = re.split(r'(?<=[.!?])\s+', text)
-
+    sentences = re.split(r"(?<=[.!?])\s+", text)
 
     chunks = []
     current = ""
@@ -95,12 +93,12 @@ def chunk_text(text: str, max_size: int = 500) -> List[str]:
                 chunks.append(current)
                 current = ""
             for i in range(0, len(sentence), max_size):
-                chunks.append(sentence[i:i+max_size])
+                chunks.append(sentence[i : i + max_size])
 
             continue
 
         if len(current) + len(sentence) + 1 <= max_size:
-            current += (" " + sentence if current else sentence)
+            current += " " + sentence if current else sentence
         else:
             chunks.append(current)
             current = sentence
@@ -111,12 +109,12 @@ def chunk_text(text: str, max_size: int = 500) -> List[str]:
     return chunks
 
 
-def process_file(bucket: str, key: str, s3 = s3) -> Dict:
+def process_file(bucket: str, key: str, s3=s3) -> Dict:
     """
     Process document from object storage and store vector embeddings.
 
     This pipeline performs:
-    
+
     1. Download file from MinIO/S3 bucket.
     2. Detect file extension.
     3. Select appropriate document loader.
@@ -187,13 +185,9 @@ def process_file(bucket: str, key: str, s3 = s3) -> Dict:
         embeddings=embeddings,
         file_name=key,
         bucket=bucket,
-        metadata={
-            "file_extension": ext,
-            "processed_at": str(datetime.now())
-        }
+        metadata={"file_extension": ext, "processed_at": str(datetime.now())},
     )
-    
-    logger.debug(f"✅ Saved to Qdrant: {result}")
-    
-    return result
 
+    logger.debug(f"✅ Saved to Qdrant: {result}")
+
+    return result
