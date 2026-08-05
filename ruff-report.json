@@ -1,0 +1,3289 @@
+[
+  {
+    "cell": null,
+    "code": "I001",
+    "end_location": {
+      "column": 38,
+      "row": 3
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/api/main.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "from fastapi import FastAPI\n\nfrom api.routers import model_routers, web_minio_events_routers\n\n",
+          "end_location": {
+            "column": 1,
+            "row": 5
+          },
+          "location": {
+            "column": 1,
+            "row": 1
+          }
+        }
+      ],
+      "message": "Organize imports"
+    },
+    "location": {
+      "column": 1,
+      "row": 1
+    },
+    "message": "Import block is un-sorted or un-formatted",
+    "name": "unsorted-imports",
+    "noqa_row": 1,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unsorted-imports"
+  },
+  {
+    "cell": null,
+    "code": "I001",
+    "end_location": {
+      "column": 62,
+      "row": 4
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/api/routers/model_routers.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "from api.schemas.queryModels import TextRequest, TextResponse\nfrom core.logger_config import logger\nfrom fastapi import APIRouter\nfrom services.ragServices import ollamaInit\n\n",
+          "end_location": {
+            "column": 1,
+            "row": 6
+          },
+          "location": {
+            "column": 1,
+            "row": 1
+          }
+        }
+      ],
+      "message": "Organize imports"
+    },
+    "location": {
+      "column": 1,
+      "row": 1
+    },
+    "message": "Import block is un-sorted or un-formatted",
+    "name": "unsorted-imports",
+    "noqa_row": 1,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unsorted-imports"
+  },
+  {
+    "cell": null,
+    "code": "BLE001",
+    "end_location": {
+      "column": 21,
+      "row": 71
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/api/routers/model_routers.py",
+    "fix": null,
+    "location": {
+      "column": 12,
+      "row": 71
+    },
+    "message": "Do not catch blind exception: `Exception`",
+    "name": "blind-except",
+    "noqa_row": 71,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/blind-except"
+  },
+  {
+    "cell": null,
+    "code": "I001",
+    "end_location": {
+      "column": 53,
+      "row": 3
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/api/routers/web_minio_events_routers.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "from core.logger_config import logger\nfrom fastapi import APIRouter, Request\nfrom workers.tasksCelery import webhook_minio_events\n\n",
+          "end_location": {
+            "column": 1,
+            "row": 5
+          },
+          "location": {
+            "column": 1,
+            "row": 1
+          }
+        }
+      ],
+      "message": "Organize imports"
+    },
+    "location": {
+      "column": 1,
+      "row": 1
+    },
+    "message": "Import block is un-sorted or un-formatted",
+    "name": "unsorted-imports",
+    "noqa_row": 1,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unsorted-imports"
+  },
+  {
+    "cell": null,
+    "code": "BLE001",
+    "end_location": {
+      "column": 25,
+      "row": 40
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/api/routers/web_minio_events_routers.py",
+    "fix": null,
+    "location": {
+      "column": 16,
+      "row": 40
+    },
+    "message": "Do not catch blind exception: `Exception`",
+    "name": "blind-except",
+    "noqa_row": 40,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/blind-except"
+  },
+  {
+    "cell": null,
+    "code": "BLE001",
+    "end_location": {
+      "column": 21,
+      "row": 45
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/api/routers/web_minio_events_routers.py",
+    "fix": null,
+    "location": {
+      "column": 12,
+      "row": 45
+    },
+    "message": "Do not catch blind exception: `Exception`",
+    "name": "blind-except",
+    "noqa_row": 45,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/blind-except"
+  },
+  {
+    "cell": null,
+    "code": "N999",
+    "end_location": {
+      "column": 1,
+      "row": 1
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/api/schemas/queryModels.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 1
+    },
+    "message": "Invalid module name: 'queryModels'",
+    "name": "invalid-module-name",
+    "noqa_row": 1,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/invalid-module-name"
+  },
+  {
+    "cell": null,
+    "code": "I001",
+    "end_location": {
+      "column": 28,
+      "row": 2
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/api/schemas/queryModels.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "from typing import Optional\n\nfrom pydantic import BaseModel, Field\n\n\n",
+          "end_location": {
+            "column": 1,
+            "row": 5
+          },
+          "location": {
+            "column": 1,
+            "row": 1
+          }
+        }
+      ],
+      "message": "Organize imports"
+    },
+    "location": {
+      "column": 1,
+      "row": 1
+    },
+    "message": "Import block is un-sorted or un-formatted",
+    "name": "unsorted-imports",
+    "noqa_row": 1,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unsorted-imports"
+  },
+  {
+    "cell": null,
+    "code": "UP045",
+    "end_location": {
+      "column": 31,
+      "row": 31
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/api/schemas/queryModels.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "int | None",
+          "end_location": {
+            "column": 31,
+            "row": 31
+          },
+          "location": {
+            "column": 18,
+            "row": 31
+          }
+        }
+      ],
+      "message": "Convert to `X | None`"
+    },
+    "location": {
+      "column": 18,
+      "row": 31
+    },
+    "message": "Use `X | None` for type annotations",
+    "name": "non-pep604-annotation-optional",
+    "noqa_row": 31,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/non-pep604-annotation-optional"
+  },
+  {
+    "cell": null,
+    "code": "UP045",
+    "end_location": {
+      "column": 30,
+      "row": 34
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/api/schemas/queryModels.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "str | None",
+          "end_location": {
+            "column": 30,
+            "row": 34
+          },
+          "location": {
+            "column": 17,
+            "row": 34
+          }
+        }
+      ],
+      "message": "Convert to `X | None`"
+    },
+    "location": {
+      "column": 17,
+      "row": 34
+    },
+    "message": "Use `X | None` for type annotations",
+    "name": "non-pep604-annotation-optional",
+    "noqa_row": 34,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/non-pep604-annotation-optional"
+  },
+  {
+    "cell": null,
+    "code": "I001",
+    "end_location": {
+      "column": 2,
+      "row": 9
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/core/__init__.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "from .global_config import (\n    CelerySetting,\n    DatabaseSettings,\n    FastAPISettings,\n    celery_settings,\n    fastapi_settings,\n    minio_database_settings,\n)\nfrom .logger_config import logger\n\n",
+          "end_location": {
+            "column": 1,
+            "row": 11
+          },
+          "location": {
+            "column": 1,
+            "row": 1
+          }
+        }
+      ],
+      "message": "Organize imports"
+    },
+    "location": {
+      "column": 1,
+      "row": 1
+    },
+    "message": "Import block is un-sorted or un-formatted",
+    "name": "unsorted-imports",
+    "noqa_row": 1,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unsorted-imports"
+  },
+  {
+    "cell": null,
+    "code": "RUF022",
+    "end_location": {
+      "column": 2,
+      "row": 19
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/core/__init__.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "[\n    \"CelerySetting\",\n    \"DatabaseSettings\",\n    \"FastAPISettings\",\n    \"celery_settings\",\n    \"fastapi_settings\",\n    \"logger\",\n    \"minio_database_settings\",\n]",
+          "end_location": {
+            "column": 2,
+            "row": 19
+          },
+          "location": {
+            "column": 11,
+            "row": 11
+          }
+        }
+      ],
+      "message": "Apply an isort-style sorting to `__all__`"
+    },
+    "location": {
+      "column": 11,
+      "row": 11
+    },
+    "message": "`__all__` is not sorted",
+    "name": "unsorted-dunder-all",
+    "noqa_row": 11,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unsorted-dunder-all"
+  },
+  {
+    "cell": null,
+    "code": "I001",
+    "end_location": {
+      "column": 25,
+      "row": 2
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/core/global_config.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "from pathlib import Path\n\nfrom pydantic_settings import BaseSettings, SettingsConfigDict\n\n\n",
+          "end_location": {
+            "column": 1,
+            "row": 5
+          },
+          "location": {
+            "column": 1,
+            "row": 1
+          }
+        }
+      ],
+      "message": "Organize imports"
+    },
+    "location": {
+      "column": 1,
+      "row": 1
+    },
+    "message": "Import block is un-sorted or un-formatted",
+    "name": "unsorted-imports",
+    "noqa_row": 1,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unsorted-imports"
+  },
+  {
+    "cell": null,
+    "code": "I001",
+    "end_location": {
+      "column": 49,
+      "row": 3
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/core/logger_config.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "import logging\nimport os\nfrom logging.handlers import RotatingFileHandler\n\n",
+          "end_location": {
+            "column": 1,
+            "row": 5
+          },
+          "location": {
+            "column": 1,
+            "row": 1
+          }
+        }
+      ],
+      "message": "Organize imports"
+    },
+    "location": {
+      "column": 1,
+      "row": 1
+    },
+    "message": "Import block is un-sorted or un-formatted",
+    "name": "unsorted-imports",
+    "noqa_row": 1,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unsorted-imports"
+  },
+  {
+    "cell": null,
+    "code": "I001",
+    "end_location": {
+      "column": 47,
+      "row": 4
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/infrastructure/celery/client.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "from core.global_config import celery_settings\nfrom core.logger_config import logger\n\nfrom celery import Celery\n\n",
+          "end_location": {
+            "column": 1,
+            "row": 6
+          },
+          "location": {
+            "column": 1,
+            "row": 2
+          }
+        }
+      ],
+      "message": "Organize imports"
+    },
+    "location": {
+      "column": 1,
+      "row": 2
+    },
+    "message": "Import block is un-sorted or un-formatted",
+    "name": "unsorted-imports",
+    "noqa_row": 2,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unsorted-imports"
+  },
+  {
+    "cell": null,
+    "code": "F401",
+    "end_location": {
+      "column": 38,
+      "row": 3
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/infrastructure/celery/client.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 1,
+            "row": 4
+          },
+          "location": {
+            "column": 1,
+            "row": 3
+          }
+        }
+      ],
+      "message": "Remove unused import: `core.logger_config.logger`"
+    },
+    "location": {
+      "column": 32,
+      "row": 3
+    },
+    "message": "`core.logger_config.logger` imported but unused",
+    "name": "unused-import",
+    "noqa_row": 3,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unused-import"
+  },
+  {
+    "cell": null,
+    "code": "BLE001",
+    "end_location": {
+      "column": 17,
+      "row": 11
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/infrastructure/celery/client.py",
+    "fix": null,
+    "location": {
+      "column": 8,
+      "row": 11
+    },
+    "message": "Do not catch blind exception: `Exception`",
+    "name": "blind-except",
+    "noqa_row": 11,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/blind-except"
+  },
+  {
+    "cell": null,
+    "code": "PLW0133",
+    "end_location": {
+      "column": 50,
+      "row": 12
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/infrastructure/celery/client.py",
+    "fix": {
+      "applicability": "unsafe",
+      "edits": [
+        {
+          "content": "raise ",
+          "end_location": {
+            "column": 5,
+            "row": 12
+          },
+          "location": {
+            "column": 5,
+            "row": 12
+          }
+        }
+      ],
+      "message": "Add `raise` keyword"
+    },
+    "location": {
+      "column": 5,
+      "row": 12
+    },
+    "message": "Missing `raise` statement on exception",
+    "name": "useless-exception-statement",
+    "noqa_row": 12,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/useless-exception-statement"
+  },
+  {
+    "cell": null,
+    "code": "F401",
+    "end_location": {
+      "column": 28,
+      "row": 1
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/infrastructure/ollama/client.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 1,
+            "row": 2
+          },
+          "location": {
+            "column": 1,
+            "row": 1
+          }
+        }
+      ],
+      "message": "Remove unused import: `urllib.response`"
+    },
+    "location": {
+      "column": 20,
+      "row": 1
+    },
+    "message": "`urllib.response` imported but unused",
+    "name": "unused-import",
+    "noqa_row": 1,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unused-import"
+  },
+  {
+    "cell": null,
+    "code": "RUF013",
+    "end_location": {
+      "column": 49,
+      "row": 20
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/infrastructure/ollama/client.py",
+    "fix": {
+      "applicability": "unsafe",
+      "edits": [
+        {
+          "content": "dict | None",
+          "end_location": {
+            "column": 49,
+            "row": 20
+          },
+          "location": {
+            "column": 45,
+            "row": 20
+          }
+        }
+      ],
+      "message": "Convert to `T | None`"
+    },
+    "location": {
+      "column": 45,
+      "row": 20
+    },
+    "message": "PEP 484 prohibits implicit `Optional`",
+    "name": "implicit-optional",
+    "noqa_row": 20,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/implicit-optional"
+  },
+  {
+    "cell": null,
+    "code": "F811",
+    "end_location": {
+      "column": 17,
+      "row": 32
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/infrastructure/ollama/client.py",
+    "fix": null,
+    "location": {
+      "column": 9,
+      "row": 32
+    },
+    "message": "Redefinition of unused `response` from line 1: `response` redefined here",
+    "name": "redefined-while-unused",
+    "noqa_row": 32,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/redefined-while-unused"
+  },
+  {
+    "cell": null,
+    "code": "I001",
+    "end_location": {
+      "column": 42,
+      "row": 2
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/loaders/Load_module/__init__.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "from .document_loader import process_file\nfrom .loader import CSVLoader, DOCXLoader, HTMLLoader, PDFLoader, TextLoader\n\n",
+          "end_location": {
+            "column": 1,
+            "row": 4
+          },
+          "location": {
+            "column": 1,
+            "row": 1
+          }
+        }
+      ],
+      "message": "Organize imports"
+    },
+    "location": {
+      "column": 1,
+      "row": 1
+    },
+    "message": "Import block is un-sorted or un-formatted",
+    "name": "unsorted-imports",
+    "noqa_row": 1,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unsorted-imports"
+  },
+  {
+    "cell": null,
+    "code": "RUF022",
+    "end_location": {
+      "column": 95,
+      "row": 4
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/loaders/Load_module/__init__.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "[\"CSVLoader\", \"DOCXLoader\", \"HTMLLoader\", \"PDFLoader\", \"TextLoader\", \"process_file\"]",
+          "end_location": {
+            "column": 95,
+            "row": 4
+          },
+          "location": {
+            "column": 11,
+            "row": 4
+          }
+        }
+      ],
+      "message": "Apply an isort-style sorting to `__all__`"
+    },
+    "location": {
+      "column": 11,
+      "row": 4
+    },
+    "message": "`__all__` is not sorted",
+    "name": "unsorted-dunder-all",
+    "noqa_row": 4,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unsorted-dunder-all"
+  },
+  {
+    "cell": null,
+    "code": "I001",
+    "end_location": {
+      "column": 10,
+      "row": 14
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/loaders/Load_module/document_loader.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "import re\nfrom datetime import datetime\nfrom typing import Dict, List\nfrom urllib.parse import unquote_plus\n\nfrom core.logger_config import logger\nfrom infrastructure.minio.client import s3\nfrom llama_index.core import Document, SimpleDirectoryReader\nfrom llama_index.core.node_parser import SentenceSplitter\nfrom llama_index.embeddings.ollama import OllamaEmbedding\nfrom services.qdrantServices import QdrantManager\n\nfrom .loader import CSVLoader, DOCXLoader, HTMLLoader, PDFLoader, TextLoader\n\n",
+          "end_location": {
+            "column": 1,
+            "row": 16
+          },
+          "location": {
+            "column": 1,
+            "row": 1
+          }
+        }
+      ],
+      "message": "Organize imports"
+    },
+    "location": {
+      "column": 1,
+      "row": 1
+    },
+    "message": "Import block is un-sorted or un-formatted",
+    "name": "unsorted-imports",
+    "noqa_row": 1,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unsorted-imports"
+  },
+  {
+    "cell": null,
+    "code": "UP035",
+    "end_location": {
+      "column": 30,
+      "row": 3
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/loaders/Load_module/document_loader.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 3
+    },
+    "message": "`typing.List` is deprecated, use `list` instead",
+    "name": "deprecated-import",
+    "noqa_row": 3,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/deprecated-import"
+  },
+  {
+    "cell": null,
+    "code": "UP035",
+    "end_location": {
+      "column": 30,
+      "row": 3
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/loaders/Load_module/document_loader.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 3
+    },
+    "message": "`typing.Dict` is deprecated, use `dict` instead",
+    "name": "deprecated-import",
+    "noqa_row": 3,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/deprecated-import"
+  },
+  {
+    "cell": null,
+    "code": "F401",
+    "end_location": {
+      "column": 51,
+      "row": 6
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/loaders/Load_module/document_loader.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 1,
+            "row": 7
+          },
+          "location": {
+            "column": 1,
+            "row": 6
+          }
+        }
+      ],
+      "message": "Remove unused import: `llama_index.core.SimpleDirectoryReader`"
+    },
+    "location": {
+      "column": 30,
+      "row": 6
+    },
+    "message": "`llama_index.core.SimpleDirectoryReader` imported but unused",
+    "name": "unused-import",
+    "noqa_row": 6,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unused-import"
+  },
+  {
+    "cell": null,
+    "code": "UP006",
+    "end_location": {
+      "column": 55,
+      "row": 60
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/loaders/Load_module/document_loader.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "list",
+          "end_location": {
+            "column": 55,
+            "row": 60
+          },
+          "location": {
+            "column": 51,
+            "row": 60
+          }
+        }
+      ],
+      "message": "Replace with `list`"
+    },
+    "location": {
+      "column": 51,
+      "row": 60
+    },
+    "message": "Use `list` instead of `List` for type annotation",
+    "name": "non-pep585-annotation",
+    "noqa_row": 60,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/non-pep585-annotation"
+  },
+  {
+    "cell": null,
+    "code": "UP006",
+    "end_location": {
+      "column": 55,
+      "row": 112
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/loaders/Load_module/document_loader.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "dict",
+          "end_location": {
+            "column": 55,
+            "row": 112
+          },
+          "location": {
+            "column": 51,
+            "row": 112
+          }
+        }
+      ],
+      "message": "Replace with `dict`"
+    },
+    "location": {
+      "column": 51,
+      "row": 112
+    },
+    "message": "Use `dict` instead of `Dict` for type annotation",
+    "name": "non-pep585-annotation",
+    "noqa_row": 112,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/non-pep585-annotation"
+  },
+  {
+    "cell": null,
+    "code": "DTZ005",
+    "end_location": {
+      "column": 76,
+      "row": 188
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/loaders/Load_module/document_loader.py",
+    "fix": null,
+    "location": {
+      "column": 62,
+      "row": 188
+    },
+    "message": "`datetime.datetime.now()` called without a `tz` argument",
+    "name": "call-datetime-now-without-tzinfo",
+    "noqa_row": 188,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/call-datetime-now-without-tzinfo"
+  },
+  {
+    "cell": null,
+    "code": "I001",
+    "end_location": {
+      "column": 38,
+      "row": 6
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/loaders/Load_module/loader.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "import io\n\nimport fitz  # PyMuPDF\nimport pandas as pd\nfrom bs4 import BeautifulSoup\nfrom core.logger_config import logger\nfrom docx import Document\n\n",
+          "end_location": {
+            "column": 1,
+            "row": 8
+          },
+          "location": {
+            "column": 1,
+            "row": 1
+          }
+        }
+      ],
+      "message": "Organize imports"
+    },
+    "location": {
+      "column": 1,
+      "row": 1
+    },
+    "message": "Import block is un-sorted or un-formatted",
+    "name": "unsorted-imports",
+    "noqa_row": 1,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unsorted-imports"
+  },
+  {
+    "cell": null,
+    "code": "F811",
+    "end_location": {
+      "column": 13,
+      "row": 158
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/loaders/Load_module/loader.py",
+    "fix": null,
+    "location": {
+      "column": 9,
+      "row": 158
+    },
+    "message": "Redefinition of unused `load` from line 141: `load` redefined here",
+    "name": "redefined-while-unused",
+    "noqa_row": 158,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/redefined-while-unused"
+  },
+  {
+    "cell": null,
+    "code": "RUF022",
+    "end_location": {
+      "column": 59,
+      "row": 4
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/__init__.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "[\"OllamaService\", \"QdrantManager\", \"ollamaInit\"]",
+          "end_location": {
+            "column": 59,
+            "row": 4
+          },
+          "location": {
+            "column": 11,
+            "row": 4
+          }
+        }
+      ],
+      "message": "Apply an isort-style sorting to `__all__`"
+    },
+    "location": {
+      "column": 11,
+      "row": 4
+    },
+    "message": "`__all__` is not sorted",
+    "name": "unsorted-dunder-all",
+    "noqa_row": 4,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unsorted-dunder-all"
+  },
+  {
+    "cell": null,
+    "code": "N999",
+    "end_location": {
+      "column": 1,
+      "row": 1
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/embeddingServices.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 1
+    },
+    "message": "Invalid module name: 'embeddingServices'",
+    "name": "invalid-module-name",
+    "noqa_row": 1,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/invalid-module-name"
+  },
+  {
+    "cell": null,
+    "code": "I001",
+    "end_location": {
+      "column": 10,
+      "row": 14
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/embeddingServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "import re\nfrom datetime import datetime\nfrom typing import Dict, List\nfrom urllib.parse import unquote_plus\n\nfrom core.logger_config import logger\nfrom infrastructure.minio.client import s3\nfrom llama_index.core import Document, SimpleDirectoryReader\nfrom llama_index.core.node_parser import SentenceSplitter\nfrom llama_index.embeddings.ollama import OllamaEmbedding\nfrom loaders.Load_module import CSVLoader, DOCXLoader, HTMLLoader, PDFLoader, TextLoader\n\nfrom services.qdrantServices import QdrantManager\n\n\n",
+          "end_location": {
+            "column": 1,
+            "row": 17
+          },
+          "location": {
+            "column": 1,
+            "row": 1
+          }
+        }
+      ],
+      "message": "Organize imports"
+    },
+    "location": {
+      "column": 1,
+      "row": 1
+    },
+    "message": "Import block is un-sorted or un-formatted",
+    "name": "unsorted-imports",
+    "noqa_row": 1,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unsorted-imports"
+  },
+  {
+    "cell": null,
+    "code": "UP035",
+    "end_location": {
+      "column": 30,
+      "row": 3
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/embeddingServices.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 3
+    },
+    "message": "`typing.List` is deprecated, use `list` instead",
+    "name": "deprecated-import",
+    "noqa_row": 3,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/deprecated-import"
+  },
+  {
+    "cell": null,
+    "code": "UP035",
+    "end_location": {
+      "column": 30,
+      "row": 3
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/embeddingServices.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 3
+    },
+    "message": "`typing.Dict` is deprecated, use `dict` instead",
+    "name": "deprecated-import",
+    "noqa_row": 3,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/deprecated-import"
+  },
+  {
+    "cell": null,
+    "code": "F401",
+    "end_location": {
+      "column": 51,
+      "row": 6
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/embeddingServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 1,
+            "row": 7
+          },
+          "location": {
+            "column": 1,
+            "row": 6
+          }
+        }
+      ],
+      "message": "Remove unused import: `llama_index.core.SimpleDirectoryReader`"
+    },
+    "location": {
+      "column": 30,
+      "row": 6
+    },
+    "message": "`llama_index.core.SimpleDirectoryReader` imported but unused",
+    "name": "unused-import",
+    "noqa_row": 6,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unused-import"
+  },
+  {
+    "cell": null,
+    "code": "B008",
+    "end_location": {
+      "column": 39,
+      "row": 28
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/embeddingServices.py",
+    "fix": null,
+    "location": {
+      "column": 24,
+      "row": 28
+    },
+    "message": "Do not perform function call `QdrantManager` in argument defaults; instead, perform the call within the function, or read the default from a module-level singleton variable",
+    "name": "function-call-in-default-argument",
+    "noqa_row": 28,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/function-call-in-default-argument"
+  },
+  {
+    "cell": null,
+    "code": "B008",
+    "end_location": {
+      "column": 99,
+      "row": 29
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/embeddingServices.py",
+    "fix": null,
+    "location": {
+      "column": 21,
+      "row": 29
+    },
+    "message": "Do not perform function call `OllamaEmbedding` in argument defaults; instead, perform the call within the function, or read the default from a module-level singleton variable",
+    "name": "function-call-in-default-argument",
+    "noqa_row": 29,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/function-call-in-default-argument"
+  },
+  {
+    "cell": null,
+    "code": "B008",
+    "end_location": {
+      "column": 68,
+      "row": 30
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/embeddingServices.py",
+    "fix": null,
+    "location": {
+      "column": 18,
+      "row": 30
+    },
+    "message": "Do not perform function call `SentenceSplitter` in argument defaults; instead, perform the call within the function, or read the default from a module-level singleton variable",
+    "name": "function-call-in-default-argument",
+    "noqa_row": 30,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/function-call-in-default-argument"
+  },
+  {
+    "cell": null,
+    "code": "UP006",
+    "end_location": {
+      "column": 59,
+      "row": 73
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/embeddingServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "list",
+          "end_location": {
+            "column": 59,
+            "row": 73
+          },
+          "location": {
+            "column": 55,
+            "row": 73
+          }
+        }
+      ],
+      "message": "Replace with `list`"
+    },
+    "location": {
+      "column": 55,
+      "row": 73
+    },
+    "message": "Use `list` instead of `List` for type annotation",
+    "name": "non-pep585-annotation",
+    "noqa_row": 73,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/non-pep585-annotation"
+  },
+  {
+    "cell": null,
+    "code": "UP006",
+    "end_location": {
+      "column": 65,
+      "row": 124
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/embeddingServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "dict",
+          "end_location": {
+            "column": 65,
+            "row": 124
+          },
+          "location": {
+            "column": 61,
+            "row": 124
+          }
+        }
+      ],
+      "message": "Replace with `dict`"
+    },
+    "location": {
+      "column": 61,
+      "row": 124
+    },
+    "message": "Use `dict` instead of `Dict` for type annotation",
+    "name": "non-pep585-annotation",
+    "noqa_row": 124,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/non-pep585-annotation"
+  },
+  {
+    "cell": null,
+    "code": "DTZ005",
+    "end_location": {
+      "column": 80,
+      "row": 200
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/embeddingServices.py",
+    "fix": null,
+    "location": {
+      "column": 66,
+      "row": 200
+    },
+    "message": "`datetime.datetime.now()` called without a `tz` argument",
+    "name": "call-datetime-now-without-tzinfo",
+    "noqa_row": 200,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/call-datetime-now-without-tzinfo"
+  },
+  {
+    "cell": null,
+    "code": "N999",
+    "end_location": {
+      "column": 1,
+      "row": 1
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/qdrantServices.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 1
+    },
+    "message": "Invalid module name: 'qdrantServices'",
+    "name": "invalid-module-name",
+    "noqa_row": 1,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/invalid-module-name"
+  },
+  {
+    "cell": null,
+    "code": "I001",
+    "end_location": {
+      "column": 65,
+      "row": 8
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/qdrantServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "import uuid\nfrom datetime import datetime\nfrom typing import Any, Dict, List, Optional\nfrom urllib.parse import unquote_plus\n\nfrom core.logger_config import logger\nfrom infrastructure.vector_db.client import QdrantClientInstance\nfrom qdrant_client.http import models\nfrom qdrant_client.models import Distance, FieldCondition, Filter, MatchValue, VectorParams\n\n",
+          "end_location": {
+            "column": 1,
+            "row": 10
+          },
+          "location": {
+            "column": 1,
+            "row": 1
+          }
+        }
+      ],
+      "message": "Organize imports"
+    },
+    "location": {
+      "column": 1,
+      "row": 1
+    },
+    "message": "Import block is un-sorted or un-formatted",
+    "name": "unsorted-imports",
+    "noqa_row": 1,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unsorted-imports"
+  },
+  {
+    "cell": null,
+    "code": "UP035",
+    "end_location": {
+      "column": 45,
+      "row": 2
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/qdrantServices.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 2
+    },
+    "message": "`typing.List` is deprecated, use `list` instead",
+    "name": "deprecated-import",
+    "noqa_row": 2,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/deprecated-import"
+  },
+  {
+    "cell": null,
+    "code": "UP035",
+    "end_location": {
+      "column": 45,
+      "row": 2
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/qdrantServices.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 2
+    },
+    "message": "`typing.Dict` is deprecated, use `dict` instead",
+    "name": "deprecated-import",
+    "noqa_row": 2,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/deprecated-import"
+  },
+  {
+    "cell": null,
+    "code": "UP006",
+    "end_location": {
+      "column": 20,
+      "row": 50
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/qdrantServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "list",
+          "end_location": {
+            "column": 20,
+            "row": 50
+          },
+          "location": {
+            "column": 16,
+            "row": 50
+          }
+        }
+      ],
+      "message": "Replace with `list`"
+    },
+    "location": {
+      "column": 16,
+      "row": 50
+    },
+    "message": "Use `list` instead of `List` for type annotation",
+    "name": "non-pep585-annotation",
+    "noqa_row": 50,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/non-pep585-annotation"
+  },
+  {
+    "cell": null,
+    "code": "UP006",
+    "end_location": {
+      "column": 25,
+      "row": 51
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/qdrantServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "list",
+          "end_location": {
+            "column": 25,
+            "row": 51
+          },
+          "location": {
+            "column": 21,
+            "row": 51
+          }
+        }
+      ],
+      "message": "Replace with `list`"
+    },
+    "location": {
+      "column": 21,
+      "row": 51
+    },
+    "message": "Use `list` instead of `List` for type annotation",
+    "name": "non-pep585-annotation",
+    "noqa_row": 51,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/non-pep585-annotation"
+  },
+  {
+    "cell": null,
+    "code": "UP006",
+    "end_location": {
+      "column": 30,
+      "row": 51
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/qdrantServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "list",
+          "end_location": {
+            "column": 30,
+            "row": 51
+          },
+          "location": {
+            "column": 26,
+            "row": 51
+          }
+        }
+      ],
+      "message": "Replace with `list`"
+    },
+    "location": {
+      "column": 26,
+      "row": 51
+    },
+    "message": "Use `list` instead of `List` for type annotation",
+    "name": "non-pep585-annotation",
+    "noqa_row": 51,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/non-pep585-annotation"
+  },
+  {
+    "cell": null,
+    "code": "UP045",
+    "end_location": {
+      "column": 33,
+      "row": 54
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/qdrantServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "Dict | None",
+          "end_location": {
+            "column": 33,
+            "row": 54
+          },
+          "location": {
+            "column": 19,
+            "row": 54
+          }
+        }
+      ],
+      "message": "Convert to `X | None`"
+    },
+    "location": {
+      "column": 19,
+      "row": 54
+    },
+    "message": "Use `X | None` for type annotations",
+    "name": "non-pep604-annotation-optional",
+    "noqa_row": 54,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/non-pep604-annotation-optional"
+  },
+  {
+    "cell": null,
+    "code": "UP006",
+    "end_location": {
+      "column": 32,
+      "row": 54
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/qdrantServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "dict",
+          "end_location": {
+            "column": 32,
+            "row": 54
+          },
+          "location": {
+            "column": 28,
+            "row": 54
+          }
+        }
+      ],
+      "message": "Replace with `dict`"
+    },
+    "location": {
+      "column": 28,
+      "row": 54
+    },
+    "message": "Use `dict` instead of `Dict` for type annotation",
+    "name": "non-pep585-annotation",
+    "noqa_row": 54,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/non-pep585-annotation"
+  },
+  {
+    "cell": null,
+    "code": "UP006",
+    "end_location": {
+      "column": 14,
+      "row": 55
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/qdrantServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "dict",
+          "end_location": {
+            "column": 14,
+            "row": 55
+          },
+          "location": {
+            "column": 10,
+            "row": 55
+          }
+        }
+      ],
+      "message": "Replace with `dict`"
+    },
+    "location": {
+      "column": 10,
+      "row": 55
+    },
+    "message": "Use `dict` instead of `Dict` for type annotation",
+    "name": "non-pep585-annotation",
+    "noqa_row": 55,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/non-pep585-annotation"
+  },
+  {
+    "cell": null,
+    "code": "DTZ005",
+    "end_location": {
+      "column": 45,
+      "row": 86
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/qdrantServices.py",
+    "fix": null,
+    "location": {
+      "column": 31,
+      "row": 86
+    },
+    "message": "`datetime.datetime.now()` called without a `tz` argument",
+    "name": "call-datetime-now-without-tzinfo",
+    "noqa_row": 86,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/call-datetime-now-without-tzinfo"
+  },
+  {
+    "cell": null,
+    "code": "UP006",
+    "end_location": {
+      "column": 65,
+      "row": 127
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/qdrantServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "dict",
+          "end_location": {
+            "column": 65,
+            "row": 127
+          },
+          "location": {
+            "column": 61,
+            "row": 127
+          }
+        }
+      ],
+      "message": "Replace with `dict`"
+    },
+    "location": {
+      "column": 61,
+      "row": 127
+    },
+    "message": "Use `dict` instead of `Dict` for type annotation",
+    "name": "non-pep585-annotation",
+    "noqa_row": 127,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/non-pep585-annotation"
+  },
+  {
+    "cell": null,
+    "code": "UP006",
+    "end_location": {
+      "column": 27,
+      "row": 174
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/qdrantServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "list",
+          "end_location": {
+            "column": 27,
+            "row": 174
+          },
+          "location": {
+            "column": 23,
+            "row": 174
+          }
+        }
+      ],
+      "message": "Replace with `list`"
+    },
+    "location": {
+      "column": 23,
+      "row": 174
+    },
+    "message": "Use `list` instead of `List` for type annotation",
+    "name": "non-pep585-annotation",
+    "noqa_row": 174,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/non-pep585-annotation"
+  },
+  {
+    "cell": null,
+    "code": "UP045",
+    "end_location": {
+      "column": 41,
+      "row": 176
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/qdrantServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "float | None",
+          "end_location": {
+            "column": 41,
+            "row": 176
+          },
+          "location": {
+            "column": 26,
+            "row": 176
+          }
+        }
+      ],
+      "message": "Convert to `X | None`"
+    },
+    "location": {
+      "column": 26,
+      "row": 176
+    },
+    "message": "Use `X | None` for type annotations",
+    "name": "non-pep604-annotation-optional",
+    "noqa_row": 176,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/non-pep604-annotation-optional"
+  },
+  {
+    "cell": null,
+    "code": "UP045",
+    "end_location": {
+      "column": 32,
+      "row": 177
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/qdrantServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "Dict | None",
+          "end_location": {
+            "column": 32,
+            "row": 177
+          },
+          "location": {
+            "column": 18,
+            "row": 177
+          }
+        }
+      ],
+      "message": "Convert to `X | None`"
+    },
+    "location": {
+      "column": 18,
+      "row": 177
+    },
+    "message": "Use `X | None` for type annotations",
+    "name": "non-pep604-annotation-optional",
+    "noqa_row": 177,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/non-pep604-annotation-optional"
+  },
+  {
+    "cell": null,
+    "code": "UP006",
+    "end_location": {
+      "column": 31,
+      "row": 177
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/qdrantServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "dict",
+          "end_location": {
+            "column": 31,
+            "row": 177
+          },
+          "location": {
+            "column": 27,
+            "row": 177
+          }
+        }
+      ],
+      "message": "Replace with `dict`"
+    },
+    "location": {
+      "column": 27,
+      "row": 177
+    },
+    "message": "Use `dict` instead of `Dict` for type annotation",
+    "name": "non-pep585-annotation",
+    "noqa_row": 177,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/non-pep585-annotation"
+  },
+  {
+    "cell": null,
+    "code": "UP006",
+    "end_location": {
+      "column": 14,
+      "row": 179
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/qdrantServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "list",
+          "end_location": {
+            "column": 14,
+            "row": 179
+          },
+          "location": {
+            "column": 10,
+            "row": 179
+          }
+        }
+      ],
+      "message": "Replace with `list`"
+    },
+    "location": {
+      "column": 10,
+      "row": 179
+    },
+    "message": "Use `list` instead of `List` for type annotation",
+    "name": "non-pep585-annotation",
+    "noqa_row": 179,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/non-pep585-annotation"
+  },
+  {
+    "cell": null,
+    "code": "UP006",
+    "end_location": {
+      "column": 19,
+      "row": 179
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/qdrantServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "dict",
+          "end_location": {
+            "column": 19,
+            "row": 179
+          },
+          "location": {
+            "column": 15,
+            "row": 179
+          }
+        }
+      ],
+      "message": "Replace with `dict`"
+    },
+    "location": {
+      "column": 15,
+      "row": 179
+    },
+    "message": "Use `dict` instead of `Dict` for type annotation",
+    "name": "non-pep585-annotation",
+    "noqa_row": 179,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/non-pep585-annotation"
+  },
+  {
+    "cell": null,
+    "code": "UP045",
+    "end_location": {
+      "column": 41,
+      "row": 231
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/qdrantServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "float | None",
+          "end_location": {
+            "column": 41,
+            "row": 231
+          },
+          "location": {
+            "column": 26,
+            "row": 231
+          }
+        }
+      ],
+      "message": "Convert to `X | None`"
+    },
+    "location": {
+      "column": 26,
+      "row": 231
+    },
+    "message": "Use `X | None` for type annotations",
+    "name": "non-pep604-annotation-optional",
+    "noqa_row": 231,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/non-pep604-annotation-optional"
+  },
+  {
+    "cell": null,
+    "code": "UP045",
+    "end_location": {
+      "column": 32,
+      "row": 232
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/qdrantServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "Dict | None",
+          "end_location": {
+            "column": 32,
+            "row": 232
+          },
+          "location": {
+            "column": 18,
+            "row": 232
+          }
+        }
+      ],
+      "message": "Convert to `X | None`"
+    },
+    "location": {
+      "column": 18,
+      "row": 232
+    },
+    "message": "Use `X | None` for type annotations",
+    "name": "non-pep604-annotation-optional",
+    "noqa_row": 232,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/non-pep604-annotation-optional"
+  },
+  {
+    "cell": null,
+    "code": "UP006",
+    "end_location": {
+      "column": 31,
+      "row": 232
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/qdrantServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "dict",
+          "end_location": {
+            "column": 31,
+            "row": 232
+          },
+          "location": {
+            "column": 27,
+            "row": 232
+          }
+        }
+      ],
+      "message": "Replace with `dict`"
+    },
+    "location": {
+      "column": 27,
+      "row": 232
+    },
+    "message": "Use `dict` instead of `Dict` for type annotation",
+    "name": "non-pep585-annotation",
+    "noqa_row": 232,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/non-pep585-annotation"
+  },
+  {
+    "cell": null,
+    "code": "UP006",
+    "end_location": {
+      "column": 14,
+      "row": 233
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/qdrantServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "list",
+          "end_location": {
+            "column": 14,
+            "row": 233
+          },
+          "location": {
+            "column": 10,
+            "row": 233
+          }
+        }
+      ],
+      "message": "Replace with `list`"
+    },
+    "location": {
+      "column": 10,
+      "row": 233
+    },
+    "message": "Use `list` instead of `List` for type annotation",
+    "name": "non-pep585-annotation",
+    "noqa_row": 233,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/non-pep585-annotation"
+  },
+  {
+    "cell": null,
+    "code": "UP006",
+    "end_location": {
+      "column": 19,
+      "row": 233
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/qdrantServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "dict",
+          "end_location": {
+            "column": 19,
+            "row": 233
+          },
+          "location": {
+            "column": 15,
+            "row": 233
+          }
+        }
+      ],
+      "message": "Replace with `dict`"
+    },
+    "location": {
+      "column": 15,
+      "row": 233
+    },
+    "message": "Use `dict` instead of `Dict` for type annotation",
+    "name": "non-pep585-annotation",
+    "noqa_row": 233,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/non-pep585-annotation"
+  },
+  {
+    "cell": null,
+    "code": "UP006",
+    "end_location": {
+      "column": 53,
+      "row": 258
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/qdrantServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "dict",
+          "end_location": {
+            "column": 53,
+            "row": 258
+          },
+          "location": {
+            "column": 49,
+            "row": 258
+          }
+        }
+      ],
+      "message": "Replace with `dict`"
+    },
+    "location": {
+      "column": 49,
+      "row": 258
+    },
+    "message": "Use `dict` instead of `Dict` for type annotation",
+    "name": "non-pep585-annotation",
+    "noqa_row": 258,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/non-pep585-annotation"
+  },
+  {
+    "cell": null,
+    "code": "UP006",
+    "end_location": {
+      "column": 42,
+      "row": 297
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/qdrantServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "dict",
+          "end_location": {
+            "column": 42,
+            "row": 297
+          },
+          "location": {
+            "column": 38,
+            "row": 297
+          }
+        }
+      ],
+      "message": "Replace with `dict`"
+    },
+    "location": {
+      "column": 38,
+      "row": 297
+    },
+    "message": "Use `dict` instead of `Dict` for type annotation",
+    "name": "non-pep585-annotation",
+    "noqa_row": 297,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/non-pep585-annotation"
+  },
+  {
+    "cell": null,
+    "code": "N999",
+    "end_location": {
+      "column": 1,
+      "row": 1
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/ragServices.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 1
+    },
+    "message": "Invalid module name: 'ragServices'",
+    "name": "invalid-module-name",
+    "noqa_row": 1,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/invalid-module-name"
+  },
+  {
+    "cell": null,
+    "code": "I001",
+    "end_location": {
+      "column": 65,
+      "row": 10
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/ragServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "import json\n\nimport requests\nfrom core.global_config import minio_database_settings\nfrom core.logger_config import logger\nfrom infrastructure.ollama.client import OllamaClientInstance\nfrom infrastructure.vector_db.client import QdrantClientInstance\nfrom llama_index.core import Settings, VectorStoreIndex\nfrom llama_index.embeddings.ollama import OllamaEmbedding\nfrom llama_index.vector_stores.qdrant import QdrantVectorStore\n\nfrom services.qdrantServices import QdrantManager\n\n\n",
+          "end_location": {
+            "column": 1,
+            "row": 13
+          },
+          "location": {
+            "column": 1,
+            "row": 1
+          }
+        }
+      ],
+      "message": "Organize imports"
+    },
+    "location": {
+      "column": 1,
+      "row": 1
+    },
+    "message": "Import block is un-sorted or un-formatted",
+    "name": "unsorted-imports",
+    "noqa_row": 1,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unsorted-imports"
+  },
+  {
+    "cell": null,
+    "code": "F401",
+    "end_location": {
+      "column": 16,
+      "row": 1
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/ragServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 1,
+            "row": 2
+          },
+          "location": {
+            "column": 1,
+            "row": 1
+          }
+        }
+      ],
+      "message": "Remove unused import: `requests`"
+    },
+    "location": {
+      "column": 8,
+      "row": 1
+    },
+    "message": "`requests` imported but unused",
+    "name": "unused-import",
+    "noqa_row": 1,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unused-import"
+  },
+  {
+    "cell": null,
+    "code": "F401",
+    "end_location": {
+      "column": 55,
+      "row": 3
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/ragServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 1,
+            "row": 4
+          },
+          "location": {
+            "column": 1,
+            "row": 3
+          }
+        }
+      ],
+      "message": "Remove unused import: `core.global_config.minio_database_settings`"
+    },
+    "location": {
+      "column": 32,
+      "row": 3
+    },
+    "message": "`core.global_config.minio_database_settings` imported but unused",
+    "name": "unused-import",
+    "noqa_row": 3,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unused-import"
+  },
+  {
+    "cell": null,
+    "code": "F401",
+    "end_location": {
+      "column": 50,
+      "row": 5
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/ragServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 1,
+            "row": 6
+          },
+          "location": {
+            "column": 1,
+            "row": 5
+          }
+        }
+      ],
+      "message": "Remove unused import: `services.qdrantServices.QdrantManager`"
+    },
+    "location": {
+      "column": 37,
+      "row": 5
+    },
+    "message": "`services.qdrantServices.QdrantManager` imported but unused",
+    "name": "unused-import",
+    "noqa_row": 5,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unused-import"
+  },
+  {
+    "cell": null,
+    "code": "BLE001",
+    "end_location": {
+      "column": 25,
+      "row": 139
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/ragServices.py",
+    "fix": null,
+    "location": {
+      "column": 16,
+      "row": 139
+    },
+    "message": "Do not catch blind exception: `Exception`",
+    "name": "blind-except",
+    "noqa_row": 139,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/blind-except"
+  },
+  {
+    "cell": null,
+    "code": "BLE001",
+    "end_location": {
+      "column": 25,
+      "row": 233
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/ragServices.py",
+    "fix": null,
+    "location": {
+      "column": 16,
+      "row": 233
+    },
+    "message": "Do not catch blind exception: `Exception`",
+    "name": "blind-except",
+    "noqa_row": 233,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/blind-except"
+  },
+  {
+    "cell": null,
+    "code": "E722",
+    "end_location": {
+      "column": 19,
+      "row": 287
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/ragServices.py",
+    "fix": null,
+    "location": {
+      "column": 13,
+      "row": 287
+    },
+    "message": "Do not use bare `except`",
+    "name": "bare-except",
+    "noqa_row": 287,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/bare-except"
+  },
+  {
+    "cell": null,
+    "code": "E722",
+    "end_location": {
+      "column": 15,
+      "row": 290
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/ragServices.py",
+    "fix": null,
+    "location": {
+      "column": 9,
+      "row": 290
+    },
+    "message": "Do not use bare `except`",
+    "name": "bare-except",
+    "noqa_row": 290,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/bare-except"
+  },
+  {
+    "cell": null,
+    "code": "I001",
+    "end_location": {
+      "column": 38,
+      "row": 4
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/services/storage_events/handlers.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "from urllib.parse import unquote_plus\n\nfrom core.logger_config import logger\nfrom loaders.Load_module.document_loader import process_file\n\nfrom services.qdrantServices import QdrantManager\n\n",
+          "end_location": {
+            "column": 1,
+            "row": 6
+          },
+          "location": {
+            "column": 1,
+            "row": 1
+          }
+        }
+      ],
+      "message": "Organize imports"
+    },
+    "location": {
+      "column": 1,
+      "row": 1
+    },
+    "message": "Import block is un-sorted or un-formatted",
+    "name": "unsorted-imports",
+    "noqa_row": 1,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unsorted-imports"
+  },
+  {
+    "cell": null,
+    "code": "I001",
+    "end_location": {
+      "column": 90,
+      "row": 10
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/tests/unit_tests/test_QdrantServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "import uuid\nfrom datetime import datetime\nfrom typing import Any, Dict, List\nfrom unittest.mock import MagicMock, Mock, call, patch\n\nimport pytest\nfrom qdrant_client.http import models\nfrom qdrant_client.models import Distance, FieldCondition, Filter, MatchValue, VectorParams\nfrom services.qdrantServices import COLLECTION_NAME, DISTANCE, VECTOR_SIZE, QdrantManager\n\n",
+          "end_location": {
+            "column": 1,
+            "row": 12
+          },
+          "location": {
+            "column": 1,
+            "row": 1
+          }
+        }
+      ],
+      "message": "Organize imports"
+    },
+    "location": {
+      "column": 1,
+      "row": 1
+    },
+    "message": "Import block is un-sorted or un-formatted",
+    "name": "unsorted-imports",
+    "noqa_row": 1,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unsorted-imports"
+  },
+  {
+    "cell": null,
+    "code": "F401",
+    "end_location": {
+      "column": 49,
+      "row": 3
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/tests/unit_tests/test_QdrantServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "from unittest.mock import Mock, patch",
+          "end_location": {
+            "column": 55,
+            "row": 3
+          },
+          "location": {
+            "column": 1,
+            "row": 3
+          }
+        }
+      ],
+      "message": "Remove unused import"
+    },
+    "location": {
+      "column": 40,
+      "row": 3
+    },
+    "message": "`unittest.mock.MagicMock` imported but unused",
+    "name": "unused-import",
+    "noqa_row": 3,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unused-import"
+  },
+  {
+    "cell": null,
+    "code": "F401",
+    "end_location": {
+      "column": 55,
+      "row": 3
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/tests/unit_tests/test_QdrantServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "from unittest.mock import Mock, patch",
+          "end_location": {
+            "column": 55,
+            "row": 3
+          },
+          "location": {
+            "column": 1,
+            "row": 3
+          }
+        }
+      ],
+      "message": "Remove unused import"
+    },
+    "location": {
+      "column": 51,
+      "row": 3
+    },
+    "message": "`unittest.mock.call` imported but unused",
+    "name": "unused-import",
+    "noqa_row": 3,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unused-import"
+  },
+  {
+    "cell": null,
+    "code": "UP035",
+    "end_location": {
+      "column": 35,
+      "row": 4
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/tests/unit_tests/test_QdrantServices.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 4
+    },
+    "message": "`typing.List` is deprecated, use `list` instead",
+    "name": "deprecated-import",
+    "noqa_row": 4,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/deprecated-import"
+  },
+  {
+    "cell": null,
+    "code": "UP035",
+    "end_location": {
+      "column": 35,
+      "row": 4
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/tests/unit_tests/test_QdrantServices.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 4
+    },
+    "message": "`typing.Dict` is deprecated, use `dict` instead",
+    "name": "deprecated-import",
+    "noqa_row": 4,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/deprecated-import"
+  },
+  {
+    "cell": null,
+    "code": "F401",
+    "end_location": {
+      "column": 24,
+      "row": 4
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/tests/unit_tests/test_QdrantServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 1,
+            "row": 5
+          },
+          "location": {
+            "column": 1,
+            "row": 4
+          }
+        }
+      ],
+      "message": "Remove unused import"
+    },
+    "location": {
+      "column": 20,
+      "row": 4
+    },
+    "message": "`typing.List` imported but unused",
+    "name": "unused-import",
+    "noqa_row": 4,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unused-import"
+  },
+  {
+    "cell": null,
+    "code": "F401",
+    "end_location": {
+      "column": 30,
+      "row": 4
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/tests/unit_tests/test_QdrantServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 1,
+            "row": 5
+          },
+          "location": {
+            "column": 1,
+            "row": 4
+          }
+        }
+      ],
+      "message": "Remove unused import"
+    },
+    "location": {
+      "column": 26,
+      "row": 4
+    },
+    "message": "`typing.Dict` imported but unused",
+    "name": "unused-import",
+    "noqa_row": 4,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unused-import"
+  },
+  {
+    "cell": null,
+    "code": "F401",
+    "end_location": {
+      "column": 35,
+      "row": 4
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/tests/unit_tests/test_QdrantServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 1,
+            "row": 5
+          },
+          "location": {
+            "column": 1,
+            "row": 4
+          }
+        }
+      ],
+      "message": "Remove unused import"
+    },
+    "location": {
+      "column": 32,
+      "row": 4
+    },
+    "message": "`typing.Any` imported but unused",
+    "name": "unused-import",
+    "noqa_row": 4,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unused-import"
+  },
+  {
+    "cell": null,
+    "code": "F401",
+    "end_location": {
+      "column": 30,
+      "row": 5
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/tests/unit_tests/test_QdrantServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 1,
+            "row": 6
+          },
+          "location": {
+            "column": 1,
+            "row": 5
+          }
+        }
+      ],
+      "message": "Remove unused import: `datetime.datetime`"
+    },
+    "location": {
+      "column": 22,
+      "row": 5
+    },
+    "message": "`datetime.datetime` imported but unused",
+    "name": "unused-import",
+    "noqa_row": 5,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unused-import"
+  },
+  {
+    "cell": null,
+    "code": "F401",
+    "end_location": {
+      "column": 64,
+      "row": 7
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/tests/unit_tests/test_QdrantServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "from qdrant_client.models import VectorParams, Distance",
+          "end_location": {
+            "column": 92,
+            "row": 7
+          },
+          "location": {
+            "column": 1,
+            "row": 7
+          }
+        }
+      ],
+      "message": "Remove unused import"
+    },
+    "location": {
+      "column": 58,
+      "row": 7
+    },
+    "message": "`qdrant_client.models.Filter` imported but unused",
+    "name": "unused-import",
+    "noqa_row": 7,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unused-import"
+  },
+  {
+    "cell": null,
+    "code": "F401",
+    "end_location": {
+      "column": 80,
+      "row": 7
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/tests/unit_tests/test_QdrantServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "from qdrant_client.models import VectorParams, Distance",
+          "end_location": {
+            "column": 92,
+            "row": 7
+          },
+          "location": {
+            "column": 1,
+            "row": 7
+          }
+        }
+      ],
+      "message": "Remove unused import"
+    },
+    "location": {
+      "column": 66,
+      "row": 7
+    },
+    "message": "`qdrant_client.models.FieldCondition` imported but unused",
+    "name": "unused-import",
+    "noqa_row": 7,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unused-import"
+  },
+  {
+    "cell": null,
+    "code": "F401",
+    "end_location": {
+      "column": 92,
+      "row": 7
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/tests/unit_tests/test_QdrantServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "from qdrant_client.models import VectorParams, Distance",
+          "end_location": {
+            "column": 92,
+            "row": 7
+          },
+          "location": {
+            "column": 1,
+            "row": 7
+          }
+        }
+      ],
+      "message": "Remove unused import"
+    },
+    "location": {
+      "column": 82,
+      "row": 7
+    },
+    "message": "`qdrant_client.models.MatchValue` imported but unused",
+    "name": "unused-import",
+    "noqa_row": 7,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unused-import"
+  },
+  {
+    "cell": null,
+    "code": "F401",
+    "end_location": {
+      "column": 38,
+      "row": 8
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/tests/unit_tests/test_QdrantServices.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 1,
+            "row": 9
+          },
+          "location": {
+            "column": 1,
+            "row": 8
+          }
+        }
+      ],
+      "message": "Remove unused import: `qdrant_client.http.models`"
+    },
+    "location": {
+      "column": 32,
+      "row": 8
+    },
+    "message": "`qdrant_client.http.models` imported but unused",
+    "name": "unused-import",
+    "noqa_row": 8,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unused-import"
+  },
+  {
+    "cell": null,
+    "code": "F841",
+    "end_location": {
+      "column": 16,
+      "row": 115
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/tests/unit_tests/test_QdrantServices.py",
+    "fix": {
+      "applicability": "unsafe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 19,
+            "row": 115
+          },
+          "location": {
+            "column": 9,
+            "row": 115
+          }
+        }
+      ],
+      "message": "Remove assignment to unused variable `manager`"
+    },
+    "location": {
+      "column": 9,
+      "row": 115
+    },
+    "message": "Local variable `manager` is assigned to but never used",
+    "name": "unused-variable",
+    "noqa_row": 115,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unused-variable"
+  },
+  {
+    "cell": null,
+    "code": "F841",
+    "end_location": {
+      "column": 16,
+      "row": 126
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/tests/unit_tests/test_QdrantServices.py",
+    "fix": {
+      "applicability": "unsafe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 19,
+            "row": 126
+          },
+          "location": {
+            "column": 9,
+            "row": 126
+          }
+        }
+      ],
+      "message": "Remove assignment to unused variable `manager`"
+    },
+    "location": {
+      "column": 9,
+      "row": 126
+    },
+    "message": "Local variable `manager` is assigned to but never used",
+    "name": "unused-variable",
+    "noqa_row": 126,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unused-variable"
+  },
+  {
+    "cell": null,
+    "code": "F841",
+    "end_location": {
+      "column": 20,
+      "row": 136
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/tests/unit_tests/test_QdrantServices.py",
+    "fix": {
+      "applicability": "unsafe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 23,
+            "row": 136
+          },
+          "location": {
+            "column": 13,
+            "row": 136
+          }
+        }
+      ],
+      "message": "Remove assignment to unused variable `manager`"
+    },
+    "location": {
+      "column": 13,
+      "row": 136
+    },
+    "message": "Local variable `manager` is assigned to but never used",
+    "name": "unused-variable",
+    "noqa_row": 136,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unused-variable"
+  },
+  {
+    "cell": null,
+    "code": "F841",
+    "end_location": {
+      "column": 15,
+      "row": 190
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/tests/unit_tests/test_QdrantServices.py",
+    "fix": {
+      "applicability": "unsafe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 18,
+            "row": 190
+          },
+          "location": {
+            "column": 9,
+            "row": 190
+          }
+        }
+      ],
+      "message": "Remove assignment to unused variable `result`"
+    },
+    "location": {
+      "column": 9,
+      "row": 190
+    },
+    "message": "Local variable `result` is assigned to but never used",
+    "name": "unused-variable",
+    "noqa_row": 190,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unused-variable"
+  },
+  {
+    "cell": null,
+    "code": "F841",
+    "end_location": {
+      "column": 15,
+      "row": 251
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/tests/unit_tests/test_QdrantServices.py",
+    "fix": {
+      "applicability": "unsafe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 18,
+            "row": 251
+          },
+          "location": {
+            "column": 9,
+            "row": 251
+          }
+        }
+      ],
+      "message": "Remove assignment to unused variable `result`"
+    },
+    "location": {
+      "column": 9,
+      "row": 251
+    },
+    "message": "Local variable `result` is assigned to but never used",
+    "name": "unused-variable",
+    "noqa_row": 251,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unused-variable"
+  },
+  {
+    "cell": null,
+    "code": "F841",
+    "end_location": {
+      "column": 15,
+      "row": 270
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/tests/unit_tests/test_QdrantServices.py",
+    "fix": {
+      "applicability": "unsafe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 18,
+            "row": 270
+          },
+          "location": {
+            "column": 9,
+            "row": 270
+          }
+        }
+      ],
+      "message": "Remove assignment to unused variable `result`"
+    },
+    "location": {
+      "column": 9,
+      "row": 270
+    },
+    "message": "Local variable `result` is assigned to but never used",
+    "name": "unused-variable",
+    "noqa_row": 270,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unused-variable"
+  },
+  {
+    "cell": null,
+    "code": "F841",
+    "end_location": {
+      "column": 15,
+      "row": 355
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/tests/unit_tests/test_QdrantServices.py",
+    "fix": {
+      "applicability": "unsafe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 18,
+            "row": 355
+          },
+          "location": {
+            "column": 9,
+            "row": 355
+          }
+        }
+      ],
+      "message": "Remove assignment to unused variable `result`"
+    },
+    "location": {
+      "column": 9,
+      "row": 355
+    },
+    "message": "Local variable `result` is assigned to but never used",
+    "name": "unused-variable",
+    "noqa_row": 355,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unused-variable"
+  },
+  {
+    "cell": null,
+    "code": "F841",
+    "end_location": {
+      "column": 16,
+      "row": 441
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/tests/unit_tests/test_QdrantServices.py",
+    "fix": {
+      "applicability": "unsafe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 19,
+            "row": 441
+          },
+          "location": {
+            "column": 9,
+            "row": 441
+          }
+        }
+      ],
+      "message": "Remove assignment to unused variable `results`"
+    },
+    "location": {
+      "column": 9,
+      "row": 441
+    },
+    "message": "Local variable `results` is assigned to but never used",
+    "name": "unused-variable",
+    "noqa_row": 441,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unused-variable"
+  },
+  {
+    "cell": null,
+    "code": "F841",
+    "end_location": {
+      "column": 16,
+      "row": 464
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/tests/unit_tests/test_QdrantServices.py",
+    "fix": {
+      "applicability": "unsafe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 19,
+            "row": 464
+          },
+          "location": {
+            "column": 9,
+            "row": 464
+          }
+        }
+      ],
+      "message": "Remove assignment to unused variable `results`"
+    },
+    "location": {
+      "column": 9,
+      "row": 464
+    },
+    "message": "Local variable `results` is assigned to but never used",
+    "name": "unused-variable",
+    "noqa_row": 464,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unused-variable"
+  },
+  {
+    "cell": null,
+    "code": "B017",
+    "end_location": {
+      "column": 38,
+      "row": 511
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/tests/unit_tests/test_QdrantServices.py",
+    "fix": null,
+    "location": {
+      "column": 14,
+      "row": 511
+    },
+    "message": "Do not assert blind exception: `Exception`",
+    "name": "assert-raises-exception",
+    "noqa_row": 511,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/assert-raises-exception"
+  },
+  {
+    "cell": null,
+    "code": "BLE001",
+    "end_location": {
+      "column": 29,
+      "row": 707
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/tests/unit_tests/test_QdrantServices.py",
+    "fix": null,
+    "location": {
+      "column": 20,
+      "row": 707
+    },
+    "message": "Do not catch blind exception: `Exception`",
+    "name": "blind-except",
+    "noqa_row": 707,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/blind-except"
+  },
+  {
+    "cell": null,
+    "code": "N999",
+    "end_location": {
+      "column": 1,
+      "row": 1
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/workers/tasksCelery.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 1
+    },
+    "message": "Invalid module name: 'tasksCelery'",
+    "name": "invalid-module-name",
+    "noqa_row": 1,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/invalid-module-name"
+  },
+  {
+    "cell": null,
+    "code": "I001",
+    "end_location": {
+      "column": 34,
+      "row": 5
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/workers/tasksCelery.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "from typing import Callable, Dict\n\nfrom core.logger_config import logger\nfrom infrastructure.celery.client import celery_app\nfrom services.storage_events.events import EventType\nfrom services.storage_events.handlers import handle_object_created, handle_object_removed\n\n",
+          "end_location": {
+            "column": 1,
+            "row": 7
+          },
+          "location": {
+            "column": 1,
+            "row": 1
+          }
+        }
+      ],
+      "message": "Organize imports"
+    },
+    "location": {
+      "column": 1,
+      "row": 1
+    },
+    "message": "Import block is un-sorted or un-formatted",
+    "name": "unsorted-imports",
+    "noqa_row": 1,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unsorted-imports"
+  },
+  {
+    "cell": null,
+    "code": "UP035",
+    "end_location": {
+      "column": 34,
+      "row": 5
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/workers/tasksCelery.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "from typing import Dict\nfrom collections.abc import Callable",
+          "end_location": {
+            "column": 34,
+            "row": 5
+          },
+          "location": {
+            "column": 1,
+            "row": 5
+          }
+        }
+      ],
+      "message": "Import from `collections.abc`"
+    },
+    "location": {
+      "column": 1,
+      "row": 5
+    },
+    "message": "Import from `collections.abc` instead: `Callable`",
+    "name": "deprecated-import",
+    "noqa_row": 5,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/deprecated-import"
+  },
+  {
+    "cell": null,
+    "code": "UP035",
+    "end_location": {
+      "column": 34,
+      "row": 5
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/workers/tasksCelery.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 5
+    },
+    "message": "`typing.Dict` is deprecated, use `dict` instead",
+    "name": "deprecated-import",
+    "noqa_row": 5,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/deprecated-import"
+  },
+  {
+    "cell": null,
+    "code": "UP006",
+    "end_location": {
+      "column": 14,
+      "row": 7
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/workers/tasksCelery.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "dict",
+          "end_location": {
+            "column": 14,
+            "row": 7
+          },
+          "location": {
+            "column": 10,
+            "row": 7
+          }
+        }
+      ],
+      "message": "Replace with `dict`"
+    },
+    "location": {
+      "column": 10,
+      "row": 7
+    },
+    "message": "Use `dict` instead of `Dict` for type annotation",
+    "name": "non-pep585-annotation",
+    "noqa_row": 7,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/non-pep585-annotation"
+  },
+  {
+    "cell": null,
+    "code": "BLE001",
+    "end_location": {
+      "column": 21,
+      "row": 57
+    },
+    "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/workers/tasksCelery.py",
+    "fix": null,
+    "location": {
+      "column": 12,
+      "row": 57
+    },
+    "message": "Do not catch blind exception: `Exception`",
+    "name": "blind-except",
+    "noqa_row": 57,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/blind-except"
+  }
+]
