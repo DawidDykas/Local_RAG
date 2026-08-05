@@ -134,7 +134,7 @@
     "code": "RUF013",
     "end_location": {
       "column": 49,
-      "row": 19
+      "row": 18
     },
     "filename": "/home/runner/work/Local_RAG/Local_RAG/backend/app/infrastructure/ollama/client.py",
     "fix": {
@@ -144,11 +144,11 @@
           "content": "dict | None",
           "end_location": {
             "column": 49,
-            "row": 19
+            "row": 18
           },
           "location": {
             "column": 45,
-            "row": 19
+            "row": 18
           }
         }
       ],
@@ -156,11 +156,11 @@
     },
     "location": {
       "column": 45,
-      "row": 19
+      "row": 18
     },
     "message": "PEP 484 prohibits implicit `Optional`",
     "name": "implicit-optional",
-    "noqa_row": 19,
+    "noqa_row": 18,
     "severity": "error",
     "url": "https://docs.astral.sh/ruff/rules/implicit-optional"
   },

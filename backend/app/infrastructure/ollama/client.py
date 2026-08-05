@@ -1,4 +1,3 @@
-
 import requests
 from core.logger_config import logger
 
