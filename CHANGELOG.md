@@ -2,6 +2,19 @@
 
 
 
+## v0.6.5 (2026-08-05)
+
+### Fix
+
+* fix: Format code with Black ([`4a98128`](https://github.com/DawidDykas/Local_RAG/commit/4a981286dc83dee1ab6c2e83cd9a6dc05cd3d070))
+
+### Unknown
+
+* Update README 
+
+Removed tests directory from project structure documentation. ([`ed429e2`](https://github.com/DawidDykas/Local_RAG/commit/ed429e293027c53eb7eb55bf9a7d708007af43ed))
+
+
 ## v0.6.4 (2026-08-05)
 
 ### Fix
